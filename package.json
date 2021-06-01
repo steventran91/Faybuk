@@ -1,5 +1,7 @@
 {
   "name": "faybuk",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@babel/preset-env": "^7.14.4"
+  }
 }
