@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+    context: __dirname,
     entry: './frontend/faybuk.jsx',
     output: {
         path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
@@ -12,8 +13,8 @@ module.exports = {
                 test: [/\.jsx?$/],
                 exclude: /node_modules/,
                 loader: 'babel-loader',
-                query: {
-                    presets: ['env', 'react']
+                options: {
+                    presets: ['@babel/env', '@babel/react']
                 }
             }
         ]
