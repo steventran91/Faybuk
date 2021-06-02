@@ -1,14 +1,13 @@
 import React from 'react';
+import {Provider} from 'react-redux';
 import App from './app';
 
-const Root = () => {
+const Root = ({store}) => {
     return (
-        <div>
+        <Provider store={store}>
             <App />
-        </div>
-    )
-    
+        </Provider>
+        
+    )  
 }
-
-
 export default Root;
