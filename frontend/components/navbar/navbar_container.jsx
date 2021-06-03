@@ -1,12 +1,12 @@
 import {connect} from 'react-redux';
 import {logout} from '../../actions/session_actions';
 import {openModal} from '../../actions/modal_actions';
-import Greeting from './greeting';
+import Navbar from './navbar';
 
 
 const mapStateToProps = state => {
     return {
-        currentUser: state.session.currentUser
+        currentUser: state.entities.users[state.session.currentUser]
     };
 };
 
@@ -17,4 +17,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Greeting);
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
