@@ -47,3 +47,16 @@
     margin-bottom: 112px;
     
 }
+
+.login {
+    border: 1px solid red;
+    display: flex;
+    width: 300px;
+    height: 250px;
+    flex-direction: column;
+}
+
+.login-form-box {
+    display: flex;
+}
+
