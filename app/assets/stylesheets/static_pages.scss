@@ -1,3 +1,49 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login-header {
+    border: 1px solid red;
+    display: flex;
+    height: 680px;
+    width: auto;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f0f2f5;
+    
+}
+
+.login-header-content {
+    margin-right: -200px;
+    
+}
+
+.login-header-content h2 {
+    font-size: 50px;
+    color: rgb(82, 82, 189);
+    
+}
+
+.login-header-content h3 {
+    font-size: 14px;
+    color: rgb(113, 113, 113);
+    
+
+
+}
+
+.login-form-wrapper {
+    border: 1px solid red;
+    display: flex;
+    height: 300px;
+    width: 375px;
+    background-color: #fff;
+    justify-content: center;
+    // border: 3px solid black;
+    align-items: center;
+    border-radius: 8px;
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+    margin-bottom: 112px;
+    
+}
