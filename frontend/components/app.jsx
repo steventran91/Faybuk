@@ -13,12 +13,12 @@ const App = () => {
         <div>   
             <Modal />
             <NavbarContainer />
-            <LoginFormContainer />
+            {/* <LoginFormContainer /> */}
 
             <Switch>
 
-                <AuthRoute exact path="/" component={LoginFormContainer} />
-                {/* <AuthRoute path="/signup" component={SignupFormContainer} /> */}
+                <AuthRoute exact path="/login" component={LoginFormContainer} />
+                <AuthRoute exact path="/signup" component={SignupFormContainer} />
                 {/* <Redirect to="/" /> */}
             </Switch>
         </div>
