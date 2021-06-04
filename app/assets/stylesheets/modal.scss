@@ -4,7 +4,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: red;
+  background: rgba(0, 0, 0, 0.7);
   z-index: 10;
 }
 
@@ -14,3 +14,14 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.close-x {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+// .session-submit {
+//   text-transform: capitalize;
+// }

@@ -3,40 +3,35 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .login-header {
-    border: 1px solid red;
+    // border: 2px solid red;
     display: flex;
-    height: 680px;
-    width: auto;
-    justify-content: space-around;
+    height: 720px;
+    justify-content: center;
     align-items: center;
     background-color: #f0f2f5;
-    
+    margin-top: -50px;
 }
 
+
 .login-header-content {
-    margin-right: -200px;
-    
+    // border: 1px solid red;
+    margin-left: -150px;
+    margin-right: 150px;
 }
 
 .login-header-content h2 {
-    font-size: 50px;
-    color: rgb(82, 82, 189);
-    
+    font-size: 48px;
+    color: rgb(130, 130, 237);
 }
 
 .login-header-content h3 {
     font-size: 14px;
-    color: rgb(113, 113, 113);
-    
-
-
 }
 
 .login-form-wrapper {
-    border: 1px solid red;
     display: flex;
     height: 300px;
-    width: 375px;
+    width: 400px;
     background-color: #fff;
     justify-content: center;
     // border: 3px solid black;
@@ -44,19 +39,66 @@
     border-radius: 8px;
     padding: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
-    margin-bottom: 112px;
+    margin-bottom: 40px;
+    
+
+}
+
+
+.login-form-box {
+    // border: 1px solid red;
+    width: 350px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     
 }
 
-.login {
-    border: 1px solid red;
-    display: flex;
-    width: 300px;
-    height: 250px;
-    flex-direction: column;
+.login-input {
+    border: 1px solid lightgray;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 348px;
+    height: 45px;
+    
 }
 
-.login-form-box {
-    display: flex;
+.login-submit {
+    border: 1px solid lightgray;
+    background-color: rgb(130, 130, 237);
+    border-radius: 5px;
+    width: 348px;
+    height: 45px;
+    color: white;
+    font-size: 18px;
 }
+
+.login-button-demo {
+    background-color: #fff;
+    color: rgb(130, 130, 237);
+    font-size: 14px;
+    // border-bottom: black;
+}
+
+.button-new-account {
+    // border: 1px solid red;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    background-color: rgb(98, 211, 98);
+    color: white;
+    border-radius: 5px;
+}
+
 

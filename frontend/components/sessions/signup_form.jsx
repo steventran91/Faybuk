@@ -80,8 +80,9 @@ class SignupForm extends React.Component {
 
         return (
             <div className="signup-form-wrapper">
+                
                 <form onSubmit={this.handleSubmit}>
-                    <div id="closeModal" onClick={closeModal}>x</div>
+                    <div className="close-x" onClick={closeModal}>x</div>
                     <div>
                         <div className="signup-header-content">
                             <h2>Sign Up</h2>

@@ -2,10 +2,12 @@ import React from 'react';
 import {Redirect, withRouter} from 'react-router-dom';
 
 
+
 class SessionForm extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            open: false,
             email: "",
             password: "",
         };
@@ -46,7 +48,7 @@ class SessionForm extends React.Component {
             email: "user@user.com",
             password: "123456"
         };
-        this.props.processForm(user).then(() => this.props.history.push("/login"));
+        this.props.processForm(user);
     }
 
 
@@ -81,8 +83,7 @@ class SessionForm extends React.Component {
                                             className="login-input"
                                         />
                                     </label>
-                                </div>
-                                <div>
+                                    <br/>
                                     <label>
                                         <input
                                             type="password"
@@ -96,10 +97,13 @@ class SessionForm extends React.Component {
                                 <input className="login-submit" type="submit" value={this.props.formType} />
                                 {/* <button onClick={this.handleSubmit} className="button-login">Log In</button> */}
                                 {/* {this.props.otherForm} */}
+                                <button className="login-button-demo" onClick={this.demo}>Demo Login</button>
+                                <hr/>
+                                {this.props.otherForm}
                             </form>
-                            <button className="-login-button-demo" onClick={this.demo}>Demo Login</button>
+                            {/* <button className="-login-button-demo" onClick={this.demo}>Demo Login</button>
                             <hr className="login-line"/>
-                            {this.props.otherForm}
+                            {this.props.otherForm} */}
                         </div>    
                     </div>
                 </div>
