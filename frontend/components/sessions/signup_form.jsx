@@ -20,7 +20,7 @@ class SignupForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demo = this.demo.bind(this);
         this.handleInput = this.handleInput.bind(this);
-        this.renderErrors = this.renderErrors.bind(this);
+        // this.renderErrors = this.renderErrors.bind(this);
     }
 
     componentDidMount() {
@@ -42,14 +42,14 @@ class SignupForm extends React.Component {
         return e => this.setState({ [field]: e.target.value })
     }
 
-    renderErrors(field) {
-        for (let i = 0; i < this.props.errors.length; i++) {
-            if (this.props.errors[i].includes(fields)) {
-                return <li>{this.props.errors[i]}</li>
-            }
-        }
-        return null; 
-    }
+    // renderErrors(field) {
+    //     for (let i = 0; i < this.props.errors.length; i++) {
+    //         if (this.props.errors[i].includes(field)) {
+    //             return <li>{this.props.errors[i]}</li>
+    //         }
+    //     }
+    //     return null; 
+    // }
 
     demo() {
         let user = {
@@ -82,7 +82,7 @@ class SignupForm extends React.Component {
             <div className="signup-form-wrapper">
                 
                 <form onSubmit={this.handleSubmit}>
-                    <div className="close-x" onClick={closeModal}>x</div>
+                    <div className="close-x" onClick={this.props.closeModal}>x</div>
                     <div>
                         <div className="signup-header-content">
                             <h2>Sign Up</h2>
@@ -103,6 +103,7 @@ class SignupForm extends React.Component {
                                     placeholder="Last Name"
                                 />
                             </div>
+            
                             <div className="input-email">
                                 <input 
                                     type="email"
@@ -111,6 +112,7 @@ class SignupForm extends React.Component {
                                     placeholder="Email"
                                 />
                             </div>
+                            
                             <div className="input-password">
                                 <input 
                                     type="password"
@@ -119,6 +121,7 @@ class SignupForm extends React.Component {
                                     placeholder="Password"
                                 />
                             </div>
+                            
                             <div className="birthdate-wrapper">
                                 <div className="birthdate-label">Birthdate</div>
                                 <div className="birthdate-selector">
@@ -143,6 +146,7 @@ class SignupForm extends React.Component {
                                         {selectYears().map(year => <option key={`year${year}`} value={`${year}`}>{`${year}`}</option>)}
                                     </select>
                                 </div>
+                                
                                 <div className="gender-label">Gender</div>
                                 <div className="gender-wrapper">
                                     <label>Male
@@ -170,6 +174,7 @@ class SignupForm extends React.Component {
                                         />
                                     </label>
                                 </div>
+                                
                                 <button className="signup-submit-button">{this.props.formType}</button>
                             </div>
                         </div>

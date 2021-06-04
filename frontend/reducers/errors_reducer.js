@@ -4,7 +4,7 @@ import usersReducer from './users_reducer';
 
 const errorsReducer = combineReducers({
     session: sessionErrorsReducer,
-    user: usersReducer
+    
 });
 
 

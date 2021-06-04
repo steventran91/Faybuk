@@ -17,21 +17,22 @@
     // border: 1px solid red;
     margin-left: -150px;
     margin-right: 150px;
+    margin-top: -50px;
 }
 
 .login-header-content h2 {
-    font-size: 48px;
+    font-size: 52px;
     color: rgb(130, 130, 237);
 }
 
 .login-header-content h3 {
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .login-form-wrapper {
     display: flex;
     height: 300px;
-    width: 400px;
+    width: 380px;
     background-color: #fff;
     justify-content: center;
     // border: 3px solid black;
@@ -74,7 +75,7 @@
     border: 1px solid lightgray;
     background-color: rgb(130, 130, 237);
     border-radius: 5px;
-    width: 348px;
+    width: 350px;
     height: 45px;
     color: white;
     font-size: 18px;
@@ -99,6 +100,11 @@
     background-color: rgb(98, 211, 98);
     color: white;
     border-radius: 5px;
+}
+
+.login-footer-content {
+    text-align: center;
+    font-size: 11px;
 }
 
 

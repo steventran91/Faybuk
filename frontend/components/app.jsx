@@ -10,16 +10,16 @@ import SessionForm from '../components/sessions/session_form';
 
 const App = () => {
     return (
-        <div className="app">
-            <header>
-                <NavbarContainer />
-                <Modal />
-            </header>
+        <div>   
+            <Modal />
+            <NavbarContainer />
             <LoginFormContainer />
+
             <Switch>
-                <AuthRoute path="/login" component={LoginFormContainer} />
-                <AuthRoute path="/signup" component={SignupFormContainer} />
-                <Redirect to="/" />
+
+                <AuthRoute exact path="/" component={LoginFormContainer} />
+                {/* <AuthRoute path="/signup" component={SignupFormContainer} /> */}
+                {/* <Redirect to="/" /> */}
             </Switch>
         </div>
     ) 

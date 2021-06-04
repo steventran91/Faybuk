@@ -3,18 +3,19 @@ import {Redirect, withRouter} from 'react-router-dom';
 
 
 
+
 class SessionForm extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            open: false,
+
             email: "",
             password: "",
         };
         // console.log(this.props)
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demo = this.demo.bind(this);
-        // this.renderErrors = this.renderErrors.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
     }
 
     componentDidMount() {
@@ -51,10 +52,6 @@ class SessionForm extends React.Component {
         this.props.processForm(user);
     }
 
-
-
-
-
     render() {
         if (this.props.session.currentUser) {
             return <Redirect to="/"></Redirect>;
@@ -65,7 +62,7 @@ class SessionForm extends React.Component {
                 <div className="login-header">
                     <div className="login-header-content">
                         <h2>faybuk</h2>
-                        <h3>Connect with friends and family around the world.</h3>
+                        <h3>Connect with friends and the world around you on Facebook.</h3>
                     </div>
                     <div className="login-form-wrapper">
                         <div className="login">
@@ -74,6 +71,7 @@ class SessionForm extends React.Component {
                                 {/* <div onClick={this.props.closeModal} className="close-x">X</div>
                                 {this.renderErrors()} */}
                                 <div className="login-form">
+                                    {this.renderErrors()}
                                     <label>
                                         <input
                                             type="email"
@@ -109,10 +107,10 @@ class SessionForm extends React.Component {
                 </div>
                 <div className="-login-footer-wrapper">
                     <div className="login-footer-content">
-                        <p>contents</p>
+                        <p>Steven Tran© 2021</p>
+                        <p>This is a clone of Facebook</p>
                     </div>
                 </div>
-
             </div>
         )
     } 
