@@ -13,7 +13,7 @@ const App = () => {
         <div>   
             <Modal />
             <NavbarContainer />
-            {/* <LoginFormContainer /> */}
+            <LoginFormContainer />
 
             <Switch>
 
