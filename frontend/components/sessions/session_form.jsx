@@ -19,7 +19,7 @@ class SessionForm extends React.Component {
     }
 
     componentDidMount() {
-        this.props.clearErrors();
+      this.props.clearErrors();
     }
 
     handleSubmit(e) {
@@ -56,6 +56,7 @@ class SessionForm extends React.Component {
     render() {
         if (this.props.session.currentUser) {
             return <Redirect to="/"></Redirect>;
+            // /newsfeed
         }
 
         return (

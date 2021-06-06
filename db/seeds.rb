@@ -5,15 +5,33 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+User.destroy_all
 
 
-User.create!(
-    first_name: "user",
-    last_name: "demo",
-    email: "user@user.com",
+demo = User.create!(
+    first_name: "Max",
+    last_name: "Tran",
+    email: "max@max.com",
     password: "123456",
     birthdate: "2020/01/01",
     gender: "Male",
 )
+
+user1 = User.create!(
+    first_name: "Penelope",
+    last_name: "Phan",
+    email: "penelope@penelope.com",
+    password: "123456",
+    birthdate: "2020/02/02",
+    gender: "Female",
+)
+
+user2 = User.create!(first_name: "Chopper", last_name: "Tran", email: "chopper@chopper.com", password: "123456", birthdate: "2020/03/03", gender: "Male")
+user3 = User.create!(first_name: "Yoyo", last_name: "Chu", email: "chu@chu.com", password: "123456", birthdate: "2020/04/04", gender: "Female")
+
+
+
 
 

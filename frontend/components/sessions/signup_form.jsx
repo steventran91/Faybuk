@@ -20,7 +20,7 @@ class SignupForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demo = this.demo.bind(this);
         this.handleInput = this.handleInput.bind(this);
-        // this.renderErrors = this.renderErrors.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
     }
 
     componentDidMount() {
@@ -42,18 +42,18 @@ class SignupForm extends React.Component {
         return e => this.setState({ [field]: e.target.value })
     }
 
-    // renderErrors(field) {
-    //     for (let i = 0; i < this.props.errors.length; i++) {
-    //         if (this.props.errors[i].includes(field)) {
-    //             return <li>{this.props.errors[i]}</li>
-    //         }
-    //     }
-    //     return null; 
-    // }
+    renderErrors(field) {
+        for (let i = 0; i < this.props.errors.length; i++) {
+            if (this.props.errors[i].includes(field)) {
+                return <li>{this.props.errors[i]}</li>
+            }
+        }
+        return null; 
+    }
 
     demo() {
         let user = {
-            email: "user@user.com",
+            email: "max@max.com",
             password: "123456"
         };
         this.props.processForm(user);

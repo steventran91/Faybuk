@@ -2,7 +2,10 @@ class ApplicationController < ActionController::Base
     helper_method :current_user, :logged_in?
 
     def current_user
+        # add a route to expose this work
+        # frontend should call this to get user data if frontend has session token
         @current_user ||= User.find_by(session_token: session[:session_token])
+        # session[:current_user] = @current_user ??
     end
 
     def logged_in?

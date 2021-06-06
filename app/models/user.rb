@@ -5,6 +5,9 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
     attr_reader :password
 
+    has_one_attached :profile_pic
+    has_one_attached :cover_photo
+
 
     def self.generate_session_token
         SecureRandom::urlsafe_base64

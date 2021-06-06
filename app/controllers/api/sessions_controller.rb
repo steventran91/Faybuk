@@ -10,13 +10,19 @@ class Api::SessionsController < ApplicationController
         end
     end
 
+    # def validate
+    #     #  recieve session token and use session token to get current user data 
+
+    # end
+
     def destroy
         @user = current_user
         if @user 
             logout
-            render "api/users/show"
+            render json: {}
         else
             render json: ["Not Signed In"], status: 404
         end
     end
 end
+
