@@ -53,7 +53,7 @@ class SignupForm extends React.Component {
 
     demo() {
         let user = {
-            email: "max@max.com",
+            email: "user@user.com",
             password: "123456"
         };
         this.props.processForm(user);

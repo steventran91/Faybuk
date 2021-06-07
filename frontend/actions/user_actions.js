@@ -1,7 +1,7 @@
 import * as UserAPIUtil from '../utils/users_util';
 
 export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS";
-export const RECEIVE_USERS = "RECEIVE_USERS";
+export const RECEIVE_USER = "RECEIVE_USER";
 
 export const receiveAllUsers = users => ({
     type: RECEIVE_ALL_USERS,
@@ -14,13 +14,13 @@ export const receiveUser = user => ({
 });
 
 export const fetchAllUsers = () => dispatch => {
-    return(UserAPIUtil.fetchAllUsers()
+    return(UserAPIUtil.requestAllUsers()
         .then(users => dispatch(receiveAllUsers(users)))
     )
 };
 
 export const fetchUser = userId => dispatch => {
-    return(UserAPIUtil.fetchUser(userId)
+    return(UserAPIUtil.requestUser(userId)
         .then(user => dispatch(receiveUser(user)))
     )
 };

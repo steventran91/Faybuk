@@ -8,6 +8,37 @@ class User < ApplicationRecord
     has_one_attached :profile_pic
     has_one_attached :cover_photo
 
+    has_many :posts,
+    foreign_key: :author_id,
+    class_name: :Post
+
+    has_many :received_posts,
+    foreign_key: :wall_id,
+    class_name: :Post
+
+    has_many :comments, 
+    foreign_key: :commenter_id,
+    class_name: :Comment
+
+    has_many :friendships,
+    foreign_key: :user_id,
+    class_name: :Friendship 
+
+    has_many :friends,
+    through: :friendships,
+    source: :friend 
+
+    has_many :sent_requests,
+    foreign_key: :sender_id,
+    class_name: :Request 
+
+    has_many :received_requests,
+    foreign_key: :receiver_id,
+    class_name: :Request
+
+
+    
+
 
     def self.generate_session_token
         SecureRandom::urlsafe_base64

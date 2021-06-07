@@ -1,6 +1,4 @@
-// if (this.props.session.id) {
-        //     return <Redirect to="/newsfeed"></Redirect>;
-        // }# This file is auto-generated from the current state of the database. Instead
+# This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
@@ -12,10 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_03_210916) do
+ActiveRecord::Schema.define(version: 2021_06_07_022702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.text "body", null: false
+    t.integer "commenter_id", null: false
+    t.integer "post_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["commenter_id"], name: "index_comments_on_commenter_id", unique: true
+    t.index ["post_id"], name: "index_comments_on_post_id", unique: true
+  end
+
+  create_table "friendships", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "friend_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["friend_id"], name: "index_friendships_on_friend_id"
+    t.index ["user_id"], name: "index_friendships_on_user_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.text "body", null: false
+    t.integer "author_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "wall_id", null: false
+    t.index ["author_id"], name: "index_posts_on_author_id"
+    t.index ["wall_id"], name: "index_posts_on_wall_id"
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.integer "sender_id", null: false
+    t.integer "receiver_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["receiver_id"], name: "index_requests_on_receiver_id", unique: true
+    t.index ["sender_id"], name: "index_requests_on_sender_id", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name", null: false
