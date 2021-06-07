@@ -96,7 +96,6 @@ class Navbar extends React.Component {
             <nav>{this.props.loggedIn && <LogoutButton logout={this.props.logout} />}</nav>
           </div>
         )}
-        ;
       </div>
     );
   }
@@ -118,6 +117,8 @@ function LogoutButton(props) {
     </>
   );
 }
+
+export default Navbar;
 
 // class Navbar extends React.Component {
 //     constructor(props) {
@@ -193,8 +194,6 @@ function LogoutButton(props) {
 //     }
 
 // }
-
-export default Navbar;
 
 // const Navbar = ({ loggedIn, logout, openModal }) => {
 //     const logoutButton = () => (
