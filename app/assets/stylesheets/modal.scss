@@ -17,6 +17,48 @@
   transform: translate(-50%, -50%);
   background-color: white;
   z-index: 20;
+  width: 380px;
+  height: 420px;
+  border-radius: 5px;
+  
+
+}
+
+.signup-header-content {
+  
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.signup-header-content > h2 {
+  font-size: 24px;
+}
+
+.signup-header-content > h4 {
+  color: grey;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.divider {
+  border-bottom: 1px solid lightgray;
+}
+
+.input-name {
+  // border: 1px solid black;
+  margin-top: 15px;
+  // margin-left: 10px;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.input-name input {
+  background-color: rgb(228, 227, 227);
+  border: 1px solid grey;
+  justify-content: center;
+  height: 30px;
+  border-radius: 5px;
 }
 
 .close-x {
@@ -26,6 +68,113 @@
   cursor: pointer;
 }
 
-// .session-submit {
-//   text-transform: capitalize;
+.input-email {
+  display: flex;
+  margin-left: 7px;
+}
+
+.input-email input {
+  margin-top: 15px;
+  background-color: rgb(228, 227, 227);
+  border: 1px solid grey;
+  justify-content: center;
+  height: 30px;
+  width: 363px;
+  border-radius: 5px;
+}
+
+.input-password {
+  display: flex;
+  margin-left: 7px;
+}
+
+.input-password input {
+  margin-top: 15px;
+  background-color: rgb(228, 227, 227);
+  border: 1px solid grey;
+  justify-content: center;
+  height: 30px;
+  width: 363px;
+  border-radius: 5px;
+}
+
+.birthdate-label {
+  font-size: 12px;
+  color: grey;
+  margin-top: 15px;
+  margin-left: 7px;
+}
+
+.birthdate-selector {
+  display: flex;
+  margin-left: 7px;
+}
+
+.birthdate-selector select {
+  background-color: rgb(228, 227, 227);
+  border: 1px solid grey;
+  height: 30px;
+  width: 121.5px;
+
+  border-radius: 5px;
+}
+
+.gender-label {
+  font-size: 12px;
+  color: grey;
+  margin-top: 15px;
+  margin-left: 7px;
+}
+
+.gender-wrapper label {
+  border: 1px solid black;
+  margin-left: 7px;
+  justify-content: center;
+  height: 30px;
+  width: 115px;
+  border-radius: 5px;
+  
+}
+
+// .gender-wrapper input {
+//   display: flex;
+//   flex-direction: row;
 // }
+
+.gender-wrapper {
+  display: flex;
+  justify-content: stretch;
+}
+
+.signup-button-container {
+  // border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 140px;
+  height: 40px;
+  // left: 50%;
+  margin-top: 20px;
+  margin-left: 120px;
+  border-radius: 5px;
+  background-color: #62d362;
+}
+
+button.signup-submit-button {
+  background-color: #62d362;
+  margin-bottom: 5px;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.form-errors {
+  list-style: none;
+  align-content: center;
+  text-align: left;
+  color: red;
+  font-size: 12px;
+  padding-left: 10px;
+  // padding-bottom: 5px;
+}
+
