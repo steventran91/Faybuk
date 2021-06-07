@@ -88,6 +88,7 @@ class SignupForm extends React.Component {
                             <h2>Sign Up</h2>
                             <h4>It's quick and easy.</h4>
                         </div>
+                        <hr /> 
                         <div className="signup-form-contents">
                             <div className="input-name">
                                 <input 
@@ -103,7 +104,7 @@ class SignupForm extends React.Component {
                                     placeholder="Last Name"
                                 />
                             </div>
-            
+                            {!this.renderErrors("First") || !this.renderErrors("Last") ? null : <div className="form-errors">????</div>}
                             <div className="input-email">
                                 <input 
                                     type="email"
@@ -112,7 +113,7 @@ class SignupForm extends React.Component {
                                     placeholder="Email"
                                 />
                             </div>
-                            
+                            <div className="form-errors">{this.renderErrors("Email")}</div>
                             <div className="input-password">
                                 <input 
                                     type="password"
@@ -121,7 +122,7 @@ class SignupForm extends React.Component {
                                     placeholder="Password"
                                 />
                             </div>
-                            
+                            <div className="form-errors">{this.renderErrors("Password")}</div>
                             <div className="birthdate-wrapper">
                                 <div className="birthdate-label">Birthdate</div>
                                 <div className="birthdate-selector">
@@ -146,7 +147,7 @@ class SignupForm extends React.Component {
                                         {selectYears().map(year => <option key={`year${year}`} value={`${year}`}>{`${year}`}</option>)}
                                     </select>
                                 </div>
-                                
+                                <div className="form-errors">{this.renderErrors("Birthdate")}</div>
                                 <div className="gender-label">Gender</div>
                                 <div className="gender-wrapper">
                                     <label>Male
@@ -174,7 +175,7 @@ class SignupForm extends React.Component {
                                         />
                                     </label>
                                 </div>
-                                
+                                <div className="form-errors">{this.renderErrors("Gender")}</div>
                                 <button className="signup-submit-button">{this.props.formType}</button>
                             </div>
                         </div>
