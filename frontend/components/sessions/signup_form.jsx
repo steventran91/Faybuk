@@ -88,7 +88,6 @@ class SignupForm extends React.Component {
                             <h2>Sign Up</h2>
                             <h4>It's quick and easy.</h4>
                         </div>
-                        <hr /> 
                         <div className="signup-form-contents">
                             <div className="input-name">
                                 <input 
