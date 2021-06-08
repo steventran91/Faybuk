@@ -14,7 +14,7 @@ class FriendshipsController < ApplicationController
 
 
     def destroy 
-        @friendshop = Friendship.find_by(id: params[:id])
+        @friendship = Friendship.find_by(id: params[:id])
         @reverse_friendship = Friendship.find_by(user_id: @friendship.friend_id, friend_id: current_user.id)
         if @friendship.destroy && @reverse_friendship.destroy 
             render :show 
