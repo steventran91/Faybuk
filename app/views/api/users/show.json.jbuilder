@@ -13,7 +13,7 @@ end
 json.friendships do 
     @user.friendships.each do |friend|
         json.set! friend.id do 
-            json.partial! 'api/friendships/friendship', friend: friend
+            json.partial! 'api/friendships/friendship', friendship: friend
         end
     end
 end

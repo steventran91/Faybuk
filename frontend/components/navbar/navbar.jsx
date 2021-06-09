@@ -66,7 +66,7 @@ class Navbar extends React.Component {
           </div>
           <div className="right-navbar">
             <div className="nav-info">
-              <Avatar />
+              <Avatar src={this.props.currentUser?.profilePic} />
               <h4>{this.props.currentUser?.first_name}</h4>
             </div>
             <IconButton>
