@@ -1,21 +1,24 @@
 import {connect} from 'react-redux';
 import ProfilePage from './profile_page';
-import {fetchUsers} from '../../actions/user_actions';
-import {fetchPosts} from '../../actions/post_actions';
+import CreateIcon from "@material-ui/icons/Create";
+import { openModal, closeModal } from '../../actions/modal_actions';
+import { clearErrors } from '../../actions/session_actions';
+import { fetchPosts, deletePost } from '../../actions/post_actions';
+import { fetchAllUsers } from '../../actions/user_actions';
+import {fetchUser} from '../../actions/user_actions';
+
 
 const mapStateToProps = (state, ownProps) => {
     return {
         user: state.entities.users[ownProps.match.params.userId],
         users: Object.values(state.entities.users),
         currentUser: state.session.currentUser,
-        posts: state.entities.posts 
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchUsers: () => dispatch(fetchUsers()),
-        fetchPosts: () => dispatch(fetchPosts())
+        fetchUser: userId => dispatch(fetchUser(userId))
     }
 }
 

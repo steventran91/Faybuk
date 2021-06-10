@@ -66,18 +66,21 @@ class Navbar extends React.Component {
           </div>
           <div className="right-navbar">
             <div className="nav-info">
-              <Avatar src={this.props.currentUser?.profilePic} />
-              <h4>{this.props.currentUser?.first_name}</h4>
+              <Link to={`/users/${this.props.currentUser.id}`} className="profile-link">
+                <Avatar src={this.props.currentUser?.profilePic} className="avatar-profile" />
+                <h4>{this.props.currentUser?.first_name}</h4>
+              </Link>
+  
             </div>
-            <IconButton>
+            {/* <IconButton>
               <AddIcon className="right-icon" />
-            </IconButton>
-            <IconButton>
+            </IconButton> */}
+            {/* <IconButton>
               <ForumIcon className="right-icon" />
             </IconButton>
-            <IconButton>
-              <NotificationImportantIcon className="right-icon" />
-            </IconButton>
+            <IconButton> */}
+              {/* <NotificationImportantIcon className="right-icon" />
+            </IconButton> */}
             <IconButton>
               <ArrowDropDownIcon
                 className="right-icon"
@@ -93,7 +96,11 @@ class Navbar extends React.Component {
         {this.state.open && (
           <div className="logout-btn-container">
             {/* <ExitToAppIcon /> */}
-            <nav>{this.props.loggedIn && <LogoutButton logout={this.props.logout} />}</nav>
+            <nav>
+              {this.props.loggedIn && (
+                <LogoutButton logout={this.props.logout} />
+              )}
+            </nav>
           </div>
         )}
       </div>

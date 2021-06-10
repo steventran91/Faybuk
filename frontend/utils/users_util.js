@@ -8,8 +8,6 @@ export const requestAllUsers = () => (
 export const requestUser = userId => (
     $.ajax({
         url: `/api/users/${userId}`,
-        method: "GET",
-        data: { user }
     })
 );
 

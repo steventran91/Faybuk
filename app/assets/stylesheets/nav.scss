@@ -11,17 +11,20 @@
     align-items: center;
     justify-content: space-around;
     color: grey;
+
     
 }
 
 .logout-btn-container {
     // border: 1px solid red;
     display: flex;
-    justify-content: flex-end;
-    // align-items: center;
-    // flex-direction: row-reverse;
     height: 100px;
-    z-index: 9;
+    float: right;
+    // position: absolute;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    position: relative;
+    // z-index: 9;
 }
 
 .logout-button {
@@ -95,6 +98,7 @@
     display: flex;
     flex: 1;
     justify-content: center;
+    margin-right: 20px;
 
 }
 
@@ -125,14 +129,25 @@
 
 .nav-info {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-link {
+    display: flex;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 .nav-info > h4 {
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
 .right-navbar {
     display: flex;
     color: black;
+}
+
+.avatar-profile {
+    margin-right: 10px;
 }
