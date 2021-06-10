@@ -11,6 +11,7 @@
     align-items: center;
     justify-content: space-around;
     color: grey;
+    // position: relative;
 
     
 }
@@ -19,11 +20,12 @@
     // border: 1px solid red;
     display: flex;
     height: 100px;
-    float: right;
-    // position: absolute;
+    // float: right;
+    position: absolute;
+    top: 68px;
+    right: -10px;
     flex-direction: row-reverse;
     justify-content: flex-end;
-    position: relative;
     // z-index: 9;
 }
 
@@ -36,6 +38,7 @@
     background-color: transparent;
     align-content: center;
     align-items: center;
+
 
 
     
@@ -146,6 +149,7 @@
 .right-navbar {
     display: flex;
     color: black;
+    position: relative;
 }
 
 .avatar-profile {

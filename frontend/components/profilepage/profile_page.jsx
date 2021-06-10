@@ -23,32 +23,37 @@ class ProfilePage extends React.Component {
     
     render() {
         
-        return(
-            <div>
-                {/* {NavbarContainer} */}
-                <div className="profile-header-container">
-                    <div className="cover-photo-container">
-                        <img src={this.props.user.coverPhoto} className="cover-photo"/>
-                        {/* <div className="upload-cover">
+        return (
+          <div>
+            {/* {NavbarContainer} */}
+            <div className="profile-header-container">
+              <div className="cover-photo-container">
+                <img src={this.props.user.coverPhoto} className="cover-photo" />
+                {/* <div className="upload-cover">
                             <CameraAltIcon fontSize="small" className="upload-cover-icon" />
                             Upload Cover Photo 
                         </div> */}
-                    </div>
-                    <div className="profile-pic-container">
-                        <img src={this.props.user.profilePic} className="profile-pic" />
-                        {/* <div className="upload-profile">
+              </div>
+              <div className="profile-pic-container">
+                <img src={this.props.user.profilePic} className="profile-pic" />
+                {/* <div className="upload-profile">
                             <CameraAltIcon fontSize="medium" className="upload-profile-icon" />
                         </div> */}
-                    </div>
-                    <div className="profile-name-container">
-                        <p className="profile-name">{this.props.user.first_name + " " + this.props.user.last_name}</p>
-                    </div>
+              </div>
+              <div className="profile-name-container">
+                <p className="profile-name">
+                  {this.props.user.first_name + " " + this.props.user.last_name}
+                </p>
+                <div className="menu-bar">
+                  <MenuBar />
                 </div>
-                <div>
-                    <MenuBar /> 
-                </div>
+              </div>
             </div>
-        )
+            {/* <div className="menu-bar">
+              <MenuBar />
+            </div> */}
+          </div>
+        );
     }
 }
 

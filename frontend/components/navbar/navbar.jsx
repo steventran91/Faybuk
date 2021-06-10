@@ -19,6 +19,7 @@ class Navbar extends React.Component {
     this.state = {
       open: false,
     };
+    this.generateMessage = this.generateMessage.bind(this);
   }
   logoutButton = () => (
     <div className="logout-wrapper">
@@ -32,6 +33,11 @@ class Navbar extends React.Component {
       />
     </div>
   );
+
+   generateMessage() {
+     alert("Under Construction....");
+   } 
+
   render() {
     console.log(this.props.currentUser)
     return (
@@ -49,12 +55,12 @@ class Navbar extends React.Component {
           </div>
           <div className="center-navbar">
             <div className="center-navbar-item">
-              <HomeIcon fontSize="large" />
+              <HomeIcon fontSize="large" onClick={this.generateMessage} />
             </div>
             <div className="center-navbar-item">
-              <PeopleIcon fontSize="large" />
+              <PeopleIcon fontSize="large" onClick={this.generateMessage} />
             </div>
-            <div className="center-navbar-item">
+            {/* <div className="center-navbar-item">
               <LiveTvIcon fontSize="large" />
             </div>
             <div className="center-navbar-item">
@@ -62,15 +68,20 @@ class Navbar extends React.Component {
             </div>
             <div className="center-navbar-item">
               <SupervisedUserCircleIcon fontSize="large" />
-            </div>
+            </div> */}
           </div>
           <div className="right-navbar">
             <div className="nav-info">
-              <Link to={`/users/${this.props.currentUser.id}`} className="profile-link">
-                <Avatar src={this.props.currentUser?.profilePic} className="avatar-profile" />
+              <Link
+                to={`/users/${this.props.currentUser.id}`}
+                className="profile-link"
+              >
+                <Avatar
+                  src={this.props.currentUser?.profilePic}
+                  className="avatar-profile"
+                />
                 <h4>{this.props.currentUser?.first_name}</h4>
               </Link>
-  
             </div>
             {/* <IconButton>
               <AddIcon className="right-icon" />
@@ -79,7 +90,7 @@ class Navbar extends React.Component {
               <ForumIcon className="right-icon" />
             </IconButton>
             <IconButton> */}
-              {/* <NotificationImportantIcon className="right-icon" />
+            {/* <NotificationImportantIcon className="right-icon" />
             </IconButton> */}
             <IconButton>
               <ArrowDropDownIcon
@@ -89,20 +100,17 @@ class Navbar extends React.Component {
                 }}
               />
             </IconButton>
+            {this.state.open && (
+              <div className="logout-btn-container">
+                <nav>
+                  {this.props.loggedIn && (
+                    <LogoutButton logout={this.props.logout} />
+                  )}
+                </nav>
+              </div>
+            )}
           </div>
-          {/* <div className="left-nav-dropdown"> */}
-          {/* <nav>{this.props.loggedIn ? this.logoutButton() : null}</nav > */}
         </div>
-        {this.state.open && (
-          <div className="logout-btn-container">
-            {/* <ExitToAppIcon /> */}
-            <nav>
-              {this.props.loggedIn && (
-                <LogoutButton logout={this.props.logout} />
-              )}
-            </nav>
-          </div>
-        )}
       </div>
     );
   }

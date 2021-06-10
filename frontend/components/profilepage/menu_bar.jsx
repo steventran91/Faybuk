@@ -6,35 +6,41 @@ class MenuBar extends React.Component {
     constructor(props) {
         super(props);
 
+        this.generateMessage = this.generateMessage.bind(this)
+    }
+
+    generateMessage() {
+        alert("Under Construction...")
     }
 
 
     render(){
-        render(
-            <div className="menu-bar-container">
-                <ul className="menu-bar-contents">
-                    <li>
-                        <Link>Posts</Link>
-                        {/* will show intro container and post container on show page */}
-                    </li>
-                    <li>
-                        <Link>About</Link>
-                        {/* will show a for where users can edit user info   */}
-                    </li>
-                    <li>
-                        <Link>Friends</Link>
-                        {/* will show friends component, lists of friends   */}
-                    </li>
-                </ul>
-                <div className="menu-edit-btn-container">
-                    <button onClick={() => {}} className="menu-edit-btn"> 
-                    {/* will create editprofileform component for onClick */}
-                        <CreateIcon fontSize="medium"/>
-                        Edit Profile
-                    </button>
-                </div>
+        return (
+          <div className="menu-bar-container">
+            <ul className="menu-bar-contents">
+              <li>
+                <Link onClick={this.generateMessage}>Posts</Link>
+                {/* will show intro container and post container on show page */}
+              </li>
+
+              <li>
+                <Link onClick={this.generateMessage}>About</Link>
+                {/* will show a for where users can edit user info   */}
+              </li>
+              <li>
+                <Link onClick={this.generateMessage}>Friends</Link>
+                {/* will show friends component, lists of friends   */}
+              </li>
+            </ul>
+            <div className="menu-edit-btn-container">
+              <button onClick={this.generateMessage} className="menu-edit-btn">
+                {/* will create editprofileform component for onClick */}
+                <CreateIcon fontSize="small" className="create-icon" />
+                Edit Profile
+              </button>
             </div>
-        )
+          </div>
+        );
     }
 }
 
