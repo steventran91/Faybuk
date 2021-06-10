@@ -29,7 +29,6 @@ class Navbar extends React.Component {
       <ExitToAppIcon
         className="logout-icon"
         onClick={this.props.logout}
-        fontSize="medium"
       />
     </div>
   );
@@ -92,12 +91,16 @@ class Navbar extends React.Component {
             <IconButton> */}
             {/* <NotificationImportantIcon className="right-icon" />
             </IconButton> */}
-            <IconButton>
+            <IconButton
+              onClick={() => {
+                this.setState({ open: !this.state.open });
+              }}
+            >
               <ArrowDropDownIcon
                 className="right-icon"
-                onClick={() => {
-                  this.setState({ open: !this.state.open });
-                }}
+                // onClick={() => {
+                //   this.setState({ open: !this.state.open });
+                // }}
               />
             </IconButton>
             {this.state.open && (
@@ -125,8 +128,7 @@ function LogoutButton(props) {
         </button>
         <ExitToAppIcon
           className="logout-icon"
-          onClick={props.logout}
-          fontSize="medium"
+          // onClick={props.logout}
         />
       </div>
     </>
