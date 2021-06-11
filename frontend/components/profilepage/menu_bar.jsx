@@ -19,7 +19,9 @@ class MenuBar extends React.Component {
           <div className="menu-bar-container">
             <ul className="menu-bar-contents">
               <li>
-                <Link to="" onClick={this.generateMessage}>Posts</Link>
+                <Link to="" onClick={this.generateMessage}>
+                  Posts
+                </Link>
                 {/* will show intro container and post container on show page */}
               </li>
               <li>
