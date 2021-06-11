@@ -19,17 +19,19 @@ class MenuBar extends React.Component {
           <div className="menu-bar-container">
             <ul className="menu-bar-contents">
               <li>
-                <Link to="" onClick={this.generateMessage}>
+                <a  onClick={this.generateMessage}>
                   Posts
-                </Link>
+                </a>
                 {/* will show intro container and post container on show page */}
               </li>
               <li>
-                <Link to="" onClick={this.generateMessage}>About</Link>
+                <a onClick={this.generateMessage}>
+                  About
+                </a>
                 {/* will show a for where users can edit user info   */}
               </li>
               <li>
-                <Link to="" onClick={this.generateMessage}>Friends</Link>
+                <a  onClick={this.generateMessage}>Friends</a>
                 {/* will show friends component, lists of friends   */}
               </li>
             </ul>

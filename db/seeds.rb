@@ -19,7 +19,7 @@ demo = User.create!(
     gender: "Male",
 )
 
-democover = open("https://faybuk-seeds.s3-us-west-1.amazonaws.com/max_cover.jpeg")
+democover = open("https://faybuk-seeds.s3.us-west-1.amazonaws.com/catcoverphoto.jpeg")
 demo.cover_photo.attach(io: democover, filename: 'demo_cover_photo.jpg')
 
 demoprofile = open("https://faybuk-seeds.s3-us-west-1.amazonaws.com/max_profile.jpeg")
@@ -35,7 +35,7 @@ user1 = User.create!(
     gender: "Female",
 )
 
-user1cover = open("https://faybuk-seeds.s3-us-west-1.amazonaws.com/pen_cover.JPEG")
+user1cover = open("https://faybuk-seeds.s3.us-west-1.amazonaws.com/pen_cover.JPEG")
 user1.cover_photo.attach(io: user1cover, filename: 'user1_cover_photo.jpg')
 
 user1profile = open("https://faybuk-seeds.s3-us-west-1.amazonaws.com/pen_profile.JPG")

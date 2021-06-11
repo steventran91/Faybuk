@@ -1,17 +1,18 @@
 .cover-photo {
-    height: 1200px;
-    width: 420px;
-    transform: rotate(90deg);
-    margin-top: -400px;
+    height: 100%;
+    max-height: 420px;
+    width: 910px;
+    max-width: 1000px;
     border-bottom-right-radius: 8px;
-    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
+.cover-photo-container {
+    min-height: 300px;
+}
 
 .profile-pic {
-    position: absolute;
-    margin-top: -535px;
-    margin-left: -54px;
+    margin-top: -300px;
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -27,8 +28,7 @@
 }
 
 .profile-name {
-    margin-top: -360px;
-    margin-left: 515px;
+    text-align: center;
     font-size: 28px;
     font-weight: 900;
     justify-content: center;
