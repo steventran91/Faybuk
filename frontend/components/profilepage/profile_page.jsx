@@ -109,7 +109,7 @@ function IntroBox() {
   const [details, setDetails] = useState({
     work: "whats work?",
     study: "huh?",
-    home: "home"
+    home: "home",
   });
   const [formVals, setFormVals] = useState({
     work: "",
@@ -293,6 +293,7 @@ function Modal(
         }}
       >
         {children}
+
       </div>
     </div>
   );
