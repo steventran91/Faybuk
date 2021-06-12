@@ -114,7 +114,7 @@ function IntroBox() {
   const [formVals, setFormVals] = useState({
     work: "",
     study: "",
-    home: ""
+    home: "",
   });
   const [visible, setVisible] = useState(false);
   const { work, study, home } = details;
