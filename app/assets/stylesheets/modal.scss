@@ -64,7 +64,7 @@
 .close-x {
   position: absolute;
   top: 5px;
-  right: 5px;
+  right: -16px;
   cursor: pointer;
 }
 
@@ -167,6 +167,190 @@ button.signup-submit-button {
   font-weight: 700;
   font-size: 16px;
 }
+
+.register {
+  background-color: #e9ebee;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #dddfe2;
+  border: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+  height: fit-content;
+  width: 436px;
+  background-color: #fff;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.register-container > h2 {
+  font-size: 24px;
+  display: flex;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-left: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.register-container > h4 {
+  display: flex;
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.hr3 {
+  margin-top: 5px;
+  border-bottom: 1px solid #DADDE1;
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+}
+
+.row input {
+  height: 35px;
+  margin-bottom: 10px;
+  background-color: white;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+  outline: none;
+  padding-left: 20px;
+  border: 1px solid #dddfe2;
+  color: #1d2129;
+  line-height: 16px;
+  font-size: 17px;
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 180px;
+}
+
+.register-container > form > center > input {
+  height: 35px;
+  margin-bottom: 10px;
+  background-color: white;
+  border: 0.5px solid gray;
+  border-radius: 5px;
+  outline: none;
+  padding-left: 20px;
+  border: 1px solid #dddfe2;
+  color: #1d2129;
+  line-height: 16px;
+  font-size: 17px;
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 90%;
+  margin-left: 10px;
+}
+
+.register-container > form > center > input::-webkit-input-placeholder {
+  font-size: 17px;
+  color: rgba(128, 128, 128, 0.8);
+  padding-left: 0px;
+}
+
+.register-register {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  vertical-align: middle;
+  font-weight: bold;
+  justify-content: center;
+  background-color: #62d362;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  line-height: 48px;
+  padding: 0 16px;
+  width: 55%;
+  height: 45px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.register-date2 {
+  margin-left: -48px;
+  margin-right: 0px !important;
+  height: 40px;
+  width: 124px;
+  outline: #CCD0D5;
+  border-radius: 5px;
+  margin-top: 20px;
+  float: left;
+}
+
+.register-date3 {
+  margin-left: 11px !important;
+  margin-right: -2px !important;
+  height: 40px;
+  width: 141px;
+  outline: #CCD0D5;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  float: left;
+}
+
+.register-date4 {
+  margin-left: 13px;
+  margin-right: 0px !important;
+  height: 40px;
+  width: 129px;
+  outline: #CCD0D5;
+  border-radius: 5px;
+  margin-top: 20px;
+  float: left;
+}
+
+
+.register-date, .register-gender {
+  font-size: 12px;
+  color: #606770;
+  font-weight: 400;
+  float: left;
+  margin-left: 10px;
+}
+
+.register-radiocontainer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+}
+
+.wrapper {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid rgba(128, 128, 128, 0.493);
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.wrapper label {
+  margin-right: 50px;
+
+}
+
+.wrapper input {
+  margin-top: 5px;
+}
+
+
 
 .form-errors {
   list-style: none;
