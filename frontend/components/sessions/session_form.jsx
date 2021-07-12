@@ -114,10 +114,10 @@ class SessionForm extends React.Component {
                 <p>Steven Tran© 2021</p>
                 <p>This is a clone of Facebook</p>
                 <a href="https://github.com/steventran91/Faybuk">
-                  <GitHubIcon />
+                  <GitHubIcon style={{ color: "grey" }} />
                 </a>
                 <a href="https://www.linkedin.com/in/steven-tran-318973119/">
-                  <LinkedInIcon />
+                  <LinkedInIcon style={{ color: "grey" }} />
                 </a>
               </div>
             </div>
