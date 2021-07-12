@@ -71,15 +71,6 @@ class Navbar extends React.Component {
                 <LinkedInIcon fontSize="large" style={{ color: "grey" }} />
               </a>
             </div>
-            {/* <div className="center-navbar-item">
-              <LiveTvIcon fontSize="large" />
-            </div>
-            <div className="center-navbar-item">
-              <StorefrontIcon fontSize="large" />
-            </div>
-            <div className="center-navbar-item">
-              <SupervisedUserCircleIcon fontSize="large" />
-            </div> */}
           </div>
           <div className="right-navbar">
             <div className="nav-info">
@@ -94,15 +85,6 @@ class Navbar extends React.Component {
                 <h4>{this.props.currentUser?.first_name}</h4>
               </Link>
             </div>
-            {/* <IconButton>
-              <AddIcon className="right-icon" />
-            </IconButton> */}
-            {/* <IconButton>
-              <ForumIcon className="right-icon" />
-            </IconButton>
-            <IconButton> */}
-            {/* <NotificationImportantIcon className="right-icon" />
-            </IconButton> */}
             <IconButton
               onClick={() => {
                 this.setState({ open: !this.state.open });
@@ -110,9 +92,6 @@ class Navbar extends React.Component {
             >
               <ArrowDropDownIcon
                 className="right-icon"
-                // onClick={() => {
-                //   this.setState({ open: !this.state.open });
-                // }}
               />
             </IconButton>
             {this.state.open && (
@@ -140,7 +119,6 @@ function LogoutButton(props) {
         </button>
         <ExitToAppIcon
           className="logout-icon"
-          // onClick={props.logout}
         />
       </div>
     </>
@@ -149,84 +127,3 @@ function LogoutButton(props) {
 
 export default Navbar;
 
-// class Navbar extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             notification: false,
-//             open: false,
-//         }
-
-//     };
-
-//     handleLogout() {
-//         this.props.logout();
-//     }
-
-//     toggleOpen(type) {
-//         return e => this.setState({ [type]: !this.state.type });
-//     }
-
-//     // logoutButton = () => (
-//     //     <div className="logout-wrapper">
-//     //         <button className="logout-button" onClick={this.props.logout}>Log Out</button>
-//     //     </div>
-//     // )
-
-//     // handleClose(type) {
-//     //     return e => this.setState({[type]: false});
-//     // }
-
-//     render() {
-//         return (
-//             <div className="nav-wrapper">
-//                 <div className="nav-left">
-//                     <Link to="/">
-//                         <button id="logo-button" className="button">
-//                             <div className="logo"></div>
-//                         </button>
-//                     </Link>
-//                 </div>
-//                 <div className="nav-center">
-//                     {/* logo with home, links to newsfeed */}
-//                     {/* logo with friends, links to friends list */}
-//                 </div>
-//                 <div className="nav-right">
-//                     {/* <Link to={`/users/${props.currentUser.id}`}>
-//                         <button
-//                             id={this.props.location.pathname === `/users/${this.props.currentUser.id}` ? 'active-nav-button' : ""}
-//                             className="profile-button">
-//                                 <div className="profile-pic-thumbnail">
-//                                     <img src="" alt=""/>
-//                                 </div>
-//                             {this.props.currentUser.first_name}
-//                         </button>
-//                     </Link> */}
-//                 <button
-//                     id={this.state.logout ? 'active-nav-button' : ''}
-//                     onClick={this.toggleOpen('logout')}
-//                     onBlur={this.toggleOpen('logout')}
-//                     className="util-button">
-//                     <div className="dropdown-menu"></div>
-//                 </button>
-//                     <nav>{this.props.loggedIn ? this.logoutButton() : null}</nav >
-
-//                     <div>
-//                         <ul>
-//                             {this.props.loggedIn ? }
-//                         </ul>
-//                     </div>
-//                 </div>
-//             </div>
-
-//         );
-//     }
-
-// }
-
-// const Navbar = ({ loggedIn, logout, openModal }) => {
-//     const logoutButton = () => (
-//         <div className="logout-wrapper">
-//             <button className="logout-button" onClick={logout}>Log Out</button>
-//         </div>
-//     );
