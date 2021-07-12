@@ -71,9 +71,6 @@ class SessionForm extends React.Component {
               <div className="login-form-wrapper">
                 <div className="login">
                   <form className="login-form-box" onSubmit={this.handleSubmit}>
-                    {/* Please {this.props.formType} or {this.props.otherForm} */}
-                    {/* <div onClick={this.props.closeModal} className="close-x">X</div>
-                                {this.renderErrors()} */}
                     <div className="login-form">
                       <div className="form-errors">{this.renderErrors()}</div>
                       <label>
@@ -101,17 +98,12 @@ class SessionForm extends React.Component {
                       type="submit"
                       value={this.props.formType}
                     />
-                    {/* <button onClick={this.handleSubmit} className="button-login">Log In</button> */}
-                    {/* {this.props.otherForm} */}
                     <button className="login-button-demo" onClick={this.demo}>
                       Demo Login
                     </button>
                     <hr />
                     {this.props.otherForm}
                   </form>
-                  {/* <button className="-login-button-demo" onClick={this.demo}>Demo Login</button>
-                            <hr className="login-line"/>
-                            {this.props.otherForm} */}
                 </div>
               </div>
             </div>
