@@ -1,5 +1,7 @@
 import React from 'react';
 import {Redirect, withRouter} from 'react-router-dom';
+import GitHubIcon from "@material-ui/icons/GitHub";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
 
 
 
@@ -111,6 +113,12 @@ class SessionForm extends React.Component {
               <div className="login-footer-content">
                 <p>Steven Tran© 2021</p>
                 <p>This is a clone of Facebook</p>
+                <a href="https://github.com/steventran91/Faybuk">
+                  <GitHubIcon />
+                </a>
+                <a href="https://www.linkedin.com/in/steven-tran-318973119/">
+                  <LinkedInIcon />
+                </a>
               </div>
             </div>
           </div>
