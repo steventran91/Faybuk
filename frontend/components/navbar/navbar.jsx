@@ -13,6 +13,7 @@ import NotificationImportantIcon from "@material-ui/icons/NotificationImportant"
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -62,7 +63,12 @@ class Navbar extends React.Component {
             </div>
             <div className="center-navbar-item">
               <a href="https://github.com/steventran91">
-                <GitHubIcon style={{color: "grey"}} />
+                <GitHubIcon style={{ color: "grey" }} />
+              </a>
+            </div>
+            <div className="center-navbar-item">
+              <a href="https://www.linkedin.com/in/steven-tran-318973119/">
+                <LinkedInIcon fontSize="large" style={{ color: "grey" }} />
               </a>
             </div>
             {/* <div className="center-navbar-item">
