@@ -40,7 +40,6 @@ class Navbar extends React.Component {
    } 
 
   render() {
-    console.log(this.props.currentUser)
     return (
       <div>
         <div className="navbar">
