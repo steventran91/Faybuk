@@ -1,17 +1,18 @@
 .logout-wrapper {
     border: 1px solid lightgray;
-    // background-color: grey;
+    background-color: white;
     height: 40px;
     width: 150px;
     display: flex;
     flex-direction: row-reverse;
-    margin-right: 35px;
+    margin-right: 23px;
+    margin-top: -12px;
     border-radius: 5px;
     box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.75);
     align-items: center;
     justify-content: space-around;
     color: grey;
-    // position: relative;
+    cursor: pointer;
 
     
 }
@@ -26,7 +27,6 @@
     right: -10px;
     flex-direction: row-reverse;
     justify-content: flex-end;
-    // z-index: 9;
 }
 
 .logout-button {
@@ -35,13 +35,11 @@
     justify-content: flex-end;
     margin-right: 15px;
     border: none;
-    background-color: transparent;
+    background-color: white;
     align-content: center;
     align-items: center;
-
-
-
-    
+    cursor: pointer;
+ 
 }
 
 .logout-icon {
@@ -148,6 +146,11 @@
 
 .nav-info > h4 {
     margin-left: 15px;
+}
+
+.profile-link {
+    text-decoration: none;
+    color: black;
 }
 
 .right-navbar {

@@ -23,17 +23,7 @@ class Navbar extends React.Component {
     };
     this.generateMessage = this.generateMessage.bind(this);
   }
-  logoutButton = () => (
-    <div className="logout-wrapper">
-      <button className="logout-button" onClick={this.props.logout}>
-        Log Out
-      </button>
-      <ExitToAppIcon
-        className="logout-icon"
-        onClick={this.props.logout}
-      />
-    </div>
-  );
+
 
    generateMessage() {
      alert("Under Construction....");
@@ -44,10 +34,12 @@ class Navbar extends React.Component {
       <div>
         <div className="navbar">
           <div className="left-navbar">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Facebook_f_Logo_%28with_gradient%29.svg"
-              alt=""
-            />
+            <Link to="/" className="left-navbar">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Facebook_f_Logo_%28with_gradient%29.svg"
+                alt=""
+              />
+            </Link>
             <div className="nav-input">
               <SearchIcon />
               <input type="text" placeholder="Search..." />
@@ -80,8 +72,9 @@ class Navbar extends React.Component {
                 <Avatar
                   src={this.props.currentUser?.profilePic}
                   className="avatar-profile"
+                  fontSize="small"
                 />
-                <h4>{this.props.currentUser?.first_name}</h4>
+                <h4>{this.props.currentUser?.first_name} {this.props.currentUser?.last_name}</h4>
               </Link>
             </div>
             <IconButton
@@ -89,9 +82,7 @@ class Navbar extends React.Component {
                 this.setState({ open: !this.state.open });
               }}
             >
-              <ArrowDropDownIcon
-                className="right-icon"
-              />
+              <ArrowDropDownIcon className="right-icon" />
             </IconButton>
             {this.state.open && (
               <div className="logout-btn-container">

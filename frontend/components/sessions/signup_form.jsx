@@ -16,7 +16,6 @@ class SignupForm extends React.Component {
             year: "2021",
             gender: "",
         };
-        // console.log(this.props)
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demo = this.demo.bind(this);
         this.handleInput = this.handleInput.bind(this);
