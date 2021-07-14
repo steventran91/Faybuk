@@ -29,8 +29,12 @@ class Api::UsersController < ApplicationController
         end
     end
 
+    def author_id_arr 
+        params[:idArr]
+    end
+
     def index 
-        @users = User.all 
+        @users = author_id_arr ? User.where({id: author_id_arr}) : User.all
         render :index 
     end
 
