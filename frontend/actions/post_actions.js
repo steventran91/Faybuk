@@ -1,13 +1,18 @@
 import * as PostAPIUtil from '../utils/api/post_api_util';
+import { receiveErrors } from './session_actions';
+import { getFriends } from '../reducers/friendship_selectors';
+import { getCommentIdsByPost } from '../reducers/comment_selectors';
+import { fetchCurrentUser } from './user_actions';
 
 export const RECEIVE_ALL_POSTS = "RECEIVE_ALL_POSTS";
 export const RECEIVE_POST = "RECEIVE_POST";
 export const REMOVE_POST = "REMOVE_POST";
+export const CLEAR_POSTS = "CLEAR_POSTS";
 
-export const receiveAllPosts = posts => {
+export const receiveAllPosts = data => {
     return {
         type: RECEIVE_ALL_POSTS,
-        posts 
+        data 
     }
 };
 
@@ -18,16 +23,36 @@ export const receivePost = post => {
     }
 };
 
-export const removePost = postId => {
+export const removePost = (post, comments) => {
     return {
         type: REMOVE_POST,
-        postId 
+        post,
+        comments
     }
 };
 
-export const fetchPosts = (wallId) => dispatch => {
-    return (PostAPIUtil.requestAllPosts(wallId)
-        .then(posts => dispatch(receiveAllPosts(posts)))
+export const clearPosts = () => {
+    return {
+        type: CLEAR_POSTS
+    }
+}
+
+export const createPost = (post) => dispatch => {
+    return (
+        PostAPIUtil.createPost(post)
+            .then(
+                post => dispatch(receivePost(post)),
+                err => dispatch(receiveErrors(err))
+            )
+    )
+}
+
+export const fetchPosts = (filter) => dispatch => {
+    return (PostAPIUtil.requestAllPosts(filter)
+        .then(
+            posts => dispatch(receiveAllPosts(posts)),
+            err => dispatch(receiveErrors(err))
+        )
     )
 };
 
@@ -38,13 +63,24 @@ export const fetchPost = (postId) => dispatch => {
 };
 
 export const updatePost = (post) => dispatch => {
-    return (PostAPIUtil.updatePost(post.id)
-        .then(post => dispatch(receivePost(post)))
+    return (PostAPIUtil.updatePost(post)
+        .then(
+            post => dispatch(receivePost(post)),
+            err => dispatch(receiveErrors(err))
+        )
     )
 };
 
-export const deletePost = (postId) => dispatch => {
+export const deletePost = (postId) => (dispatch, getState) => {
     return (PostAPIUtil.deletePost(postId)
-        .then(postId => dispatch(removePost(postId)))
+        .then(
+            post => dispatch(removePost(post, getCommentIdsByPost(getState().entities.comments, post.id))),
+            err => dispatch(receiveErrors(err))
+        )
     )
+}
+
+export const fetchCurrentUserFeed = () => (dispatch, getState) => {
+    dispatch(fetchCurrentUser())
+    return fetchPosts({userId: getState().session.currentUser})(dispatch);
 }
