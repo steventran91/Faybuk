@@ -9,18 +9,20 @@ class User < ApplicationRecord
     has_one_attached :cover_photo
 
     has_many :posts,
+    primary_key: :id,
     foreign_key: :author_id,
     class_name: :Post
 
     has_many :received_posts,
+    primary_key: :id, 
     foreign_key: :wall_id,
     class_name: :Post
 
     has_many :comments, 
-    foreign_key: :commenter_id,
-    class_name: :Comment
+    foreign_key: :commenter_id
 
     has_many :friendships,
+    primary_key: :id, 
     foreign_key: :user_id,
     class_name: :Friendship 
 
@@ -29,15 +31,16 @@ class User < ApplicationRecord
     source: :friend 
 
     has_many :sent_requests,
+    primary_key: :id,
     foreign_key: :sender_id,
     class_name: :Request 
 
     has_many :received_requests,
+    primary_key: :id, 
     foreign_key: :receiver_id,
     class_name: :Request
 
-
-    
+    has_many :likes 
 
 
     def self.generate_session_token
