@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :friendships, only: [:create, :destory]
     resources :requests, only: [:create, :destroy]
     resources :comments, only: [:index, :create, :update, :destroy]
+    resources :likes, only: [:create, :destroy]
   end
 
   root to: "static_pages#root"

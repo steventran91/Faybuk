@@ -17,4 +17,14 @@ export const updateUser = user => (
         method: "PATCH",
         data: { user }
     })
+);
+
+export const updateUserPhoto = (formData) => (
+    $.ajax({
+        url: `/api/users/${formData.get('user[id]')}`,
+        method: 'PATCH',
+        data: formData,
+        contentType: false,
+        processData: false 
+    })
 )
