@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_07_214415) do
+ActiveRecord::Schema.define(version: 2021_07_14_180120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 2021_06_07_214415) do
     t.integer "post_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["commenter_id"], name: "index_comments_on_commenter_id", unique: true
-    t.index ["post_id"], name: "index_comments_on_post_id", unique: true
+    t.index ["commenter_id"], name: "index_comments_on_commenter_id"
+    t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
   create_table "friendships", force: :cascade do |t|
@@ -53,6 +53,15 @@ ActiveRecord::Schema.define(version: 2021_06_07_214415) do
     t.datetime "updated_at", null: false
     t.index ["friend_id"], name: "index_friendships_on_friend_id"
     t.index ["user_id"], name: "index_friendships_on_user_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "like_id", null: false
+    t.string "like_type", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["like_id", "like_type", "user_id"], name: "index_likes_on_like_id_and_like_type_and_user_id", unique: true
   end
 
   create_table "posts", force: :cascade do |t|
@@ -70,8 +79,7 @@ ActiveRecord::Schema.define(version: 2021_06_07_214415) do
     t.integer "receiver_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["receiver_id"], name: "index_requests_on_receiver_id", unique: true
-    t.index ["sender_id"], name: "index_requests_on_sender_id", unique: true
+    t.index ["receiver_id", "sender_id"], name: "index_requests_on_receiver_id_and_sender_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|

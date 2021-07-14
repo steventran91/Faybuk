@@ -67,7 +67,7 @@ class ProfilePage extends React.Component {
               </div>
               <div
                 style={{
-                  width: "100%",
+                  width: "115%",
                   backgroundColor: "white",
                   marginLeft: "12px",
                   padding: "12px",
@@ -114,16 +114,16 @@ function IntroBox() {
       }}
     >
       <h3>Intro</h3>
-      <div style={{marginTop: "8px"}}>
+      <div style={{ marginTop: "8px" }}>
         <IntroItem text={`Works at ${work}`} />
       </div>
-      <div style={{marginTop: "8px"}}>
+      <div style={{ marginTop: "8px" }}>
         <IntroItem text={`Studies at ${study}`} />
       </div>
-      <div style={{marginTop: "8px"}}>
+      <div style={{ marginTop: "8px" }}>
         <IntroItem text={`Lives at ${home}`} />
       </div>
-      <div style={{marginTop: "8px"}}>
+      <div style={{ marginTop: "8px" }}>
         <button
           onClick={() => setVisible(true)}
           style={{
@@ -250,18 +250,13 @@ function Modal(
           position: "absolute",
           top: "45%",
           left: "45%",
-          // minHeight: "80vh",
-          minHeight: "50px",
-
           // minWidth: "50vw",
           minWidth: "30px",
-
           backgroundColor: "white",
           // rgba(0,0,0,0.95)
         }}
       >
         {children}
-
       </div>
     </div>
   );

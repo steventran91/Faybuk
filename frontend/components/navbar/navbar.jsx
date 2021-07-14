@@ -74,7 +74,7 @@ class Navbar extends React.Component {
                   className="avatar-profile"
                   fontSize="small"
                 />
-                <h4>{this.props.currentUser?.first_name} {this.props.currentUser?.last_name}</h4>
+                <h4>{this.props.currentUser?.first_name}</h4>
               </Link>
             </div>
             <IconButton
