@@ -77,7 +77,7 @@ class ProfilePage extends React.Component {
                   marginTop: "23px",
                 }}
               >
-                posts/comments container
+                posts/comments 
               </div>
             </div>
           </div>
