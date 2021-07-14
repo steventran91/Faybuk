@@ -1,12 +1,5 @@
-json.post do 
-    json.partial! 'post', post: @post 
-    json.commentIds @post.comment_ids 
-end
+json.partial! 'api/posts/post'. post: @post
 
-json.comment do 
-    @post.comments.each do |comment|
-        json.set! comment.id do 
-            json.partial! 'api/comments/comment', comment: comment 
-        end
-    end
+if @post.photo.attached?
+    json.photo url_for(@post.photo)
 end
