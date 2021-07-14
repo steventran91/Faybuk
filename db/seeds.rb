@@ -126,6 +126,20 @@ comment2 = Comment.create!(
     commenter_id: user3.id 
 )
 
+like1 = Like.create!(
+    like_id: post4.id,
+    like_type: "Post",
+    user_id: user3.id 
+)
+
+like2 = Like.create!(
+    like_id: post3.id,
+    like_type: "Post",
+    user_id: demo.id 
+)
+
+
+
 
 
 
