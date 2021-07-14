@@ -1,5 +1,7 @@
 class Request < ApplicationRecord
     validates :sender_id, :receiver_id, presence: true 
+    validates :receiver_id, uniqueness: {scope: :sender_id, message: "request pending"}
+    
 
 
     belongs_to :sender, 
