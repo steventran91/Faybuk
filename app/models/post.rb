@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-    validates :body, presence: true 
+    validates :author_id, :wall_id, :body, presence: true 
 
     belongs_to :author,
     foreign_key: :author_id,
@@ -10,8 +10,10 @@ class Post < ApplicationRecord
     foreign_key: :wall_id,
     class_name: :User 
 
-    has_many :comments,
-    foreign_key: :post_id,
-    class_name: :Comment 
+    has_many :comments, dependent: :destroy
+
+    has_many :likes, dependent: :destroy 
+
+    has_one_attached :photo 
 
 end
