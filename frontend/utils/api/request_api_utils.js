@@ -1,4 +1,4 @@
-export const createRequest = (request) => {
+export const sendRequest = (request) => {
   return $.ajax({
     url: `/api/requests`,
     method: "POST",
@@ -6,10 +6,9 @@ export const createRequest = (request) => {
   });
 };
 
-export const deleteRequest = (request) => {
+export const deleteRequest = (requestId) => {
   return $.ajax({
-    url: `/api/requests/${request.id}`,
-    method: "DELETE",
-    data: { request },
+    url: `/api/requests/${requestId}`,
+    method: "DELETE"
   });
 };

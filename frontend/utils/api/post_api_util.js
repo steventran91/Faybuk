@@ -1,9 +1,9 @@
-export const requestAllPosts = (wallId) => {
+export const requestAllPosts = (data) => {
     return (
         $.ajax({
             url: `/api/posts`,
             method: 'GET',
-            data: {wallId}
+            data
         })
     )
 };
@@ -17,22 +17,24 @@ export const requestPost = (postId) => {
     )
 };
 
-export const updatePost = (post) => {
-    return (
-        $.ajax({
-            url: `/api/posts/${post.id}`,
-            method: 'PATCH',
-            data: {post}
-        })
-    )
+export const updatePost = (formData) => {
+    return $.ajax({
+      url: `/api/posts/${formData.get("post[id]")}`,
+      method: "PATCH",
+      data: formData,
+      contentType: false,
+      processData: false 
+    });
 };
 
-export const createPost = (post) => {
+export const createPost = (formData) => {
     return (
         $.ajax({
             url: '/api/posts',
             method: 'POST',
-            data: {post}
+            data: formData,
+            contentType: false,
+            processData: false 
         })
     )
 };

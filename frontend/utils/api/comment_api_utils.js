@@ -1,20 +1,20 @@
-export const requestAllComments = () => {
-    return (
-        $.ajax({
-            url: `/api/comments`,
-            method: 'GET'
-        })
-    )
-};
+// export const requestAllComments = () => {
+//     return (
+//         $.ajax({
+//             url: `/api/comments`,
+//             method: 'GET'
+//         })
+//     )
+// };
 
-export const requestComment = (commentId) => {
-    return (
-        $.ajax({
-            url: `/api/comments/${commentId}`,
-            method: 'GET'
-        })
-    )
-};
+// export const requestComment = (commentId) => {
+//     return (
+//         $.ajax({
+//             url: `/api/comments/${commentId}`,
+//             method: 'GET'
+//         })
+//     )
+// };
 
 
 export const createComment = (comment) => {
