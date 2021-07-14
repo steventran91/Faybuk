@@ -28,9 +28,9 @@ json.requests do
 end
 
 json.friendships do 
-    @user.friendships.each do |friend|
+    @user.friendships.each do |friendship|
         json.set! friendship.id do 
-            json.partial! 'api/friendships/friendship', friendship: friend
+            json.partial! 'api/friendships/friendship', friendship: friendship
         end
     end
 end
