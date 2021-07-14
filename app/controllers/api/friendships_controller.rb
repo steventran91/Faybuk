@@ -1,11 +1,13 @@
 class FriendshipsController < ApplicationController
 
     def create 
-        @friendship = Friendship.new(user_id: current_user.id, friend_id: params[:sender_id])
-        @reverse_friendship = Friendship.new(user_id: params[:sender_id], friend_id: current_user.id)
-        @request = Friendship.find_by(id: params[:id])
+        @friendship = Friendship.new(friendship_params)
+        friend_request = Request.find_by(receiver_id: params[:friendship][:user_id], sender_id: params[:friendship][:friend_id])
+        connected_friendship = Friendship.new(user_id: params[:friendship][friend_id]. friend_id: params[:friendship][:user_id])
 
-        if @friendship.save && @reverse_friendship.save && @request.destroy
+        if @friendship.save 
+            connected_friendship.save 
+            friend_request.destroy 
             render :show 
         else
             render json: @friendship.errors.full_messages, status: 422 
@@ -15,19 +17,26 @@ class FriendshipsController < ApplicationController
 
     def destroy 
         @friendship = Friendship.find_by(id: params[:id])
-        @reverse_friendship = Friendship.find_by(user_id: @friendship.friend_id, friend_id: current_user.id)
-        if @friendship.destroy && @reverse_friendship.destroy 
+        connected_friendship = @friendship.connected_friendship
+        if @friendship
+            @friendship.destroy 
+            connected_friendship.destroy 
             render :show 
         else
             render json: @friendship.errors.full_messages, status: 422 
         end
     end
 
-    def index 
-        @friends = Friendship.all 
-        if params[:wallId]
-            @friends = @friends.where(user_id: params[:wallId])
-        end
-        render :index 
+    # def index 
+    #     @friends = Friendship.all 
+    #     if params[:wallId]
+    #         @friends = @friends.where(user_id: params[:wallId])
+    #     end
+    #     render :index 
+    # end
+
+    private 
+    def friendship_params
+        params.require(:friendship).permit(:user_id, :friend_id)
     end
 end

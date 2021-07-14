@@ -2,7 +2,6 @@ class RequestsController < ApplicationController
 
     def create 
         @request = Request.new(request_params)
-        @request.sender_id = current_user.id 
         if @request.save
             render :show 
         else
@@ -13,7 +12,8 @@ class RequestsController < ApplicationController
     def destroy 
         @request = Request.find_by(id: params[:id])
 
-        if @request.destroy.
+        if @request
+            @request.destroy 
             render :show 
         else
             render json: @request.errors.full_messages, status: 422 
