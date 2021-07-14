@@ -50,46 +50,38 @@ class ProfilePage extends React.Component {
                 display: "flex",
               }}
             >
-              <div
-                style={{
-                  width: "100%",
-                  maxWidth: 500,
-                }}
-              >
-                <div style={{
-                  marginTop: "24px",
-                }}>
+              <div style={{width: "100%", maxWidth: 500}}>
+                <div style={{marginTop: "24px"}}>
                   <IntroBox />
                 </div>
-                
-                {/* <div
+                <div
                   style={{
                     padding: "12px",
                     marginTop: "12px",
-
                     backgroundColor: "gray",
                     borderRadius: "5px",
                   }}
                 >
                   friends box
-                </div> */}
+                </div>
               </div>
-              {/* <div
+              <div
                 style={{
                   width: "100%",
-                  backgroundColor: "blue",
+                  backgroundColor: "white",
                   marginLeft: "12px",
+                  padding: "12px",
+                  boxShadow: "rgb(0 0 0 / 75%) 0px 5px 8px -9px",
+                  border: "1px solid lightgrey",
+                  borderRadius: "5px",
+                  marginTop: "23px",
                 }}
               >
-                {" "}
-                column 2
-              </div> */}
+                posts/comments container
+              </div>
             </div>
           </div>
         </div>
-        {/* <div className="menu-bar">
-              <MenuBar />
-            </div> */}
       </div>
     );
   }
@@ -122,32 +114,16 @@ function IntroBox() {
       }}
     >
       <h3>Intro</h3>
-      <div
-        style={{
-          marginTop: "8px",
-        }}
-      >
+      <div style={{marginTop: "8px"}}>
         <IntroItem text={`Works at ${work}`} />
       </div>
-      <div
-        style={{
-          marginTop: "8px",
-        }}
-      >
+      <div style={{marginTop: "8px"}}>
         <IntroItem text={`Studies at ${study}`} />
       </div>
-      <div
-        style={{
-          marginTop: "8px",
-        }}
-      >
+      <div style={{marginTop: "8px"}}>
         <IntroItem text={`Lives at ${home}`} />
       </div>
-      <div
-        style={{
-          marginTop: "8px",
-        }}
-      >
+      <div style={{marginTop: "8px"}}>
         <button
           onClick={() => setVisible(true)}
           style={{
