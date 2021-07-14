@@ -14,7 +14,7 @@ class ProfilePage extends React.Component {
 
   componentDidMount() {
       this.props.fetchUser(this.props.match.params.userId)
-      .then(() => this.setState(this.props.user)
+        .then(() => this.setState(this.props.user));
   }
 
   render() {
@@ -25,16 +25,9 @@ class ProfilePage extends React.Component {
         <div className="profile-header-container">
           <div className="cover-photo-container">
             <img src={this.props.user.coverPhoto} className="cover-photo" />
-            {/* <div className="upload-cover">
-                            <CameraAltIcon fontSize="small" className="upload-cover-icon" />
-                            Upload Cover Photo
-                        </div> */}
           </div>
           <div className="profile-pic-container">
             <img src={this.props.user.profilePic} className="profile-pic" />
-            {/* <div className="upload-profile">
-                            <CameraAltIcon fontSize="medium" className="upload-profile-icon" />
-                        </div> */}
           </div>
           <div
             className="profile-name-container"
