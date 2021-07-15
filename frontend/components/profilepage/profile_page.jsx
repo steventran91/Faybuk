@@ -12,22 +12,22 @@ class ProfilePage extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
+  componentDidMount() { 
       this.props.fetchUser(this.props.match.params.userId)
         .then(() => this.setState(this.props.user));
   }
 
   render() {
     return (
-     
+
       <div>
         {/* {NavbarContainer} */}
         <div className="profile-header-container">
           <div className="cover-photo-container">
-            <img src={this.props.user.coverPhoto} className="cover-photo" />
+            <img src={this.props.user?.coverPhoto} className="cover-photo" />
           </div>
           <div className="profile-pic-container">
-            <img src={this.props.user.profilePic} className="profile-pic" />
+            <img src={this.props.user?.profilePic} className="profile-pic" />
           </div>
           <div
             className="profile-name-container"
@@ -39,7 +39,7 @@ class ProfilePage extends React.Component {
             }}
           >
             <p className="profile-name">
-              {this.props.user.first_name + " " + this.props.user.last_name}
+              {this.props.user?.first_name + " " + this.props.user?.last_name}
             </p>
             <div className="menu-bar">
               <MenuBar />

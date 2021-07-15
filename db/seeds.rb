@@ -138,6 +138,18 @@ like2 = Like.create!(
     user_id: demo.id 
 )
 
+like3 = Like.create!(
+    like_id: comment1.id,
+    like_type: "Comment",
+    user_id: demo.id 
+)
+
+like4 = Like.create!(
+    like_id: comment2.id,
+    like_type: "Comment",
+    user_id: user3.id 
+)
+
 
 
 

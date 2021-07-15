@@ -1,16 +1,10 @@
 import * as CommentAPIUtil from '../utils/api/comment_api_utils';
+import { receiveErrors } from './session_actions';
 
-export const RECEIVE_ALL_COMMENTS = "RECEIVE_ALL_COMMENTS";
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
 
 
-export const receiveAllComments = comments => {
-    return {
-        type: RECEIVE_ALL_COMMENTS,
-        comments
-    }
-};
 
 export const receiveComment = comment => {
     return {
@@ -19,10 +13,10 @@ export const receiveComment = comment => {
     }
 };
 
-export const removeComment = commentId => {
+export const removeComment = comment => {
     return {
         type: REMOVE_COMMENT,
-        commentId 
+        comment
     }
 };
 
@@ -40,19 +34,28 @@ export const fetchComment = (commentId) => dispatch => {
 
 export const createComment = (comment) => dispatch => {
     return(CommentAPIUtil.createComment(comment)
-        .then(comment => dispatch(receiveComment(comment)))
+        .then(
+            comment => dispatch(receiveComment(comment)),
+            err => dispatch(receiveErrors(err))
+        )
     )
 }
 
 export const updateComment = (comment) => dispatch => {
-    return(CommentAPIUtil.updateComment(comment.id)
-        .then(comment => dispatch(receiveComment(comment)))
+    return(CommentAPIUtil.updateComment(comment)
+        .then(
+            comment => dispatch(receiveComment(comment)),
+            err => dispatch(receiveErrors(err))
+        )
     )
 }
 
 export const deleteComment = (commentId) => dispatch => {
     return(CommentAPIUtil.deleteComment(commentId)
-        .then(commentId => dispatch(removeComment(commentId)))
+        .then(
+            comment => dispatch(removeComment(comment)),
+            err => dispatch(receiveErrors(err))
+        )
     )
 }
 

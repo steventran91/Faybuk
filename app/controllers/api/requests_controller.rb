@@ -1,4 +1,4 @@
-class RequestsController < ApplicationController
+class Api::RequestsController < ApplicationController
 
     def create 
         @request = Request.new(request_params)
