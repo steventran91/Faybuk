@@ -5,7 +5,7 @@ class Api::RequestsController < ApplicationController
         if @request.save
             render :show 
         else
-            render json: @request.errors.full_messages, status: 422 
+            render json: @request.errors.full_messages, status: 400
         end
     end
 
@@ -16,7 +16,7 @@ class Api::RequestsController < ApplicationController
             @request.destroy 
             render :show 
         else
-            render json: @request.errors.full_messages, status: 422 
+            render json: ['Unable to find friend request'], status: 404
         end
     end
 

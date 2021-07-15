@@ -7,7 +7,7 @@ class Api::UsersController < ApplicationController
             login(@user)
             render :show 
         else
-            render json: @user.errors.full_messages, status: 422
+            render json: @user.errors.full_messages, status: 404
         end
     end
 
@@ -16,7 +16,7 @@ class Api::UsersController < ApplicationController
         if @user
             render :show
         else
-          render json: ["User does not exist"], status: 422
+          render json: ["User does not exist"], status: 404
         end  
     end
 
@@ -25,7 +25,7 @@ class Api::UsersController < ApplicationController
         if @user.update(user_params)
             render :show 
         else
-            render json: @user.errors.full_messages, status: 422
+            render json: @user.errors.full_messages, status: 404
         end
     end
 

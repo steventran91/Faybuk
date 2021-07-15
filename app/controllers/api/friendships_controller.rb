@@ -3,14 +3,14 @@ class Api::FriendshipsController < ApplicationController
     def create 
         @friendship = Friendship.new(friendship_params)
         friend_request = Request.find_by(receiver_id: params[:friendship][:user_id], sender_id: params[:friendship][:friend_id])
-        connected_friendship = Friendship.new(user_id: params[:friendship][friend_id]. friend_id: params[:friendship][:user_id])
+        connected_friendship = Friendship.new({user_id: params[:friendship][:friend_id], friend_id: params[:friendship][:user_id]})
 
         if @friendship.save 
             connected_friendship.save 
             friend_request.destroy 
             render :show 
         else
-            render json: @friendship.errors.full_messages, status: 422 
+            render json: @friendship.errors.full_messages, status: 400
         end
     end
 
@@ -23,7 +23,7 @@ class Api::FriendshipsController < ApplicationController
             connected_friendship.destroy 
             render :show 
         else
-            render json: @friendship.errors.full_messages, status: 422 
+            render json: ["Unable to find friendship"], status: 404 
         end
     end
 

@@ -9,7 +9,7 @@ class Api::PostsController < ApplicationController
                 friend.id
             end
             friend_id_arr << user_id 
-            @posts = Post.where(author_id: :friend_id_arr)
+            @posts = Post.where(author_id: friend_id_arr)
         else
             @posts = Post.all 
         end
@@ -26,7 +26,7 @@ class Api::PostsController < ApplicationController
         if @post.save
             render :show 
         else
-            render json: @post.errors.full_messages, status: 422
+            render json: @post.errors.full_messages, status: 400
         end
     end
 
@@ -45,7 +45,7 @@ class Api::PostsController < ApplicationController
             @post.destroy
             render :show 
         else
-            render json: ['Post does not exist'], status: 422 
+            render json: ['Post does not exist'], status: 404
         end
     end
 

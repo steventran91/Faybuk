@@ -8,6 +8,10 @@
 require "open-uri" 
 
 User.destroy_all
+Comment.destroy_all
+Friendship.destroy_all
+Like.destroy_all
+Post.destroy_all
 
 
 demo = User.create!(

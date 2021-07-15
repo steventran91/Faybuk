@@ -6,14 +6,10 @@ class Api::SessionsController < ApplicationController
             login(@user)
             render "api/users/show"
         else
-            render json: ["Invalid email/password combination"], status: 401
+            render json: ["Invalid email/password combination"], status: 404
         end
     end
 
-    # def validate
-    #     #  recieve session token and use session token to get current user data 
-
-    # end
 
     def destroy
         @user = current_user
