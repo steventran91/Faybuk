@@ -1,4 +1,4 @@
-import * as RequestAPIUtil from '../util/request_api_util';
+import * as RequestAPIUtil from '../util/friend_request_api_util';
 import { receiveErrors } from './session_actions';
 import { findRequestId } from '../reducers/request_selector';
 
