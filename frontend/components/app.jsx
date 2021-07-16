@@ -3,7 +3,7 @@ import LoginFormContainer from '../components/sessions/login_form_container';
 import SignupFormContainer from '../components/sessions/signup_form_container';
 import {Route, Link, Switch, Redirect} from 'react-router-dom'
 import NavbarContainer from './navbar/navbar_container';
-import { AuthRoute, ProtectedRoute } from '../utils/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Modal from '../components/sessions/modal';
 import ProfilePageContainer from './profilepage/profile_page_container';
 

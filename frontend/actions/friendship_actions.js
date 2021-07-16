@@ -1,4 +1,4 @@
-import * as FriendshipAPIUtil from '../utils/api/friendship_api_utils';
+import * as FriendshipAPIUtil from '../util/friendship_api_util';
 import { receiveErrors } from './session_actions';
 import { findFriendshipId } from '../reducers/friendship_selector';
 

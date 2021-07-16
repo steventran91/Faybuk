@@ -1,4 +1,4 @@
-import * as UserAPIUtil from '../utils/users_util';
+import * as UserAPIUtil from '../util/user_api_util';
 import { receiveErrors, receiveCurrentUser } from './session_actions'
 
 export const RECEIVE_USERS = "RECEIVE_ALL_USERS";

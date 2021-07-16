@@ -1,4 +1,4 @@
-import * as PostAPIUtil from '../utils/api/post_api_util';
+import * as PostAPIUtil from '../util/post_api_util';
 import { receiveErrors } from './session_actions';
 import { getFriends } from '../reducers/friendship_selector';
 import { getCommentIdsByPost } from '../reducers/comment_selector';
