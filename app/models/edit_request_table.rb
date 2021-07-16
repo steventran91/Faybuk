@@ -1,0 +1,2 @@
+class EditRequestTable < ApplicationRecord
+end

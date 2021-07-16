@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_14_180120) do
+ActiveRecord::Schema.define(version: 2021_07_16_013818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,14 @@ ActiveRecord::Schema.define(version: 2021_07_14_180120) do
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
+  create_table "friend_requests", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "requester_id", null: false
+    t.integer "requested_id", null: false
+    t.index ["requested_id", "requester_id"], name: "index_friend_requests_on_requested_id_and_requester_id", unique: true
+  end
+
   create_table "friendships", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "friend_id", null: false
@@ -74,14 +82,6 @@ ActiveRecord::Schema.define(version: 2021_07_14_180120) do
     t.index ["wall_id"], name: "index_posts_on_wall_id"
   end
 
-  create_table "requests", force: :cascade do |t|
-    t.integer "sender_id", null: false
-    t.integer "receiver_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["receiver_id", "sender_id"], name: "index_requests_on_receiver_id_and_sender_id", unique: true
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
@@ -98,4 +98,6 @@ ActiveRecord::Schema.define(version: 2021_07_14_180120) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "friend_requests", "users", column: "requested_id"
+  add_foreign_key "friend_requests", "users", column: "requester_id"
 end

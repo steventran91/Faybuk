@@ -1,0 +1,2 @@
+class RenameRequestsTableName < ApplicationRecord
+end
