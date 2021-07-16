@@ -11,7 +11,7 @@ class Friendship < ApplicationRecord
     foreign_key: :friend_id,
     class_name: :User 
 
-    def connected_friendships
+    def corresponding_friendships
         friendship = Friendship.find_by(friend_id: self.user_id, user_id: self.friend_id)
     end
     

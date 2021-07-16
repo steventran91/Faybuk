@@ -2,9 +2,7 @@ class Comment < ApplicationRecord
     validates :body, :post_id, :commenter_id, presence: true 
 
 
-    belongs_to :post, 
-    foreign_key: :post_id, 
-    class_name: :Post 
+    belongs_to :post
 
     belongs_to :author, 
     primary_key: :id,

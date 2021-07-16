@@ -13,7 +13,7 @@ class Api::LikesController < ApplicationController
         @like = Like.find_by(id: params[:id])
         if @like 
             @like.destroy
-            render: show 
+            render :show 
         else
             render json: ['Cannot find like'], status: 404 
         end

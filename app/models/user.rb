@@ -2,24 +2,35 @@ class User < ApplicationRecord
     validates :first_name, :last_name, :password_digest, presence: true
     validates :email, :session_token, presence: true, uniqueness: true 
     validates :password, length: { minimum: 6, allow_nil: true}
+
     after_initialize :ensure_session_token
     attr_reader :password
 
     has_one_attached :profile_pic
     has_one_attached :cover_photo
 
-    has_many :posts,
+    has_many :authored_posts,
     primary_key: :id,
     foreign_key: :author_id,
     class_name: :Post
 
-    has_many :received_posts,
+    has_many :wall_posts,
     primary_key: :id, 
     foreign_key: :wall_id,
     class_name: :Post
 
     has_many :comments, 
     foreign_key: :commenter_id
+
+    has_many :outgoing_friend_requests,
+    foreign_key: :requester_id,
+    primary_key: :id,
+    class_name: :FriendRequest
+
+    has_many :received_friend_requests,
+    foreign_key: :requested_id,
+    primary_key: :id,
+    class_name: :FriendRequest
 
     has_many :friendships,
     primary_key: :id, 
@@ -29,16 +40,6 @@ class User < ApplicationRecord
     has_many :friends,
     through: :friendships,
     source: :friend 
-
-    has_many :sent_requests,
-    primary_key: :id,
-    foreign_key: :sender_id,
-    class_name: :Request 
-
-    has_many :received_requests,
-    primary_key: :id, 
-    foreign_key: :receiver_id,
-    class_name: :Request
 
     has_many :likes 
 

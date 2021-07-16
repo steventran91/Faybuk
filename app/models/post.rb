@@ -6,7 +6,7 @@ class Post < ApplicationRecord
     class_name: :User
 
 
-    belongs_to :user_wall,
+    belongs_to :wall,
     foreign_key: :wall_id,
     class_name: :User 
 
