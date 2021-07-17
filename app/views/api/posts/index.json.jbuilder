@@ -2,7 +2,7 @@
     json.posts do 
         json.set! post.id do 
             json.partial! 'api/posts/post', post: post 
-            if post.photo.attached?
+            if post.photo
                 json.photo url_for(post.photo)
             end
         end

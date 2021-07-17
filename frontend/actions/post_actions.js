@@ -1,31 +1,33 @@
 import * as PostAPIUtil from '../util/post_api_util';
-import { receiveErrors } from './session_actions';
-import { getFriends } from '../reducers/friendship_selector';
-import { getCommentIdsByPost } from '../reducers/comment_selector';
-import { fetchCurrentUser } from './user_actions';
+import { receiveErrors } from './session/session_actions';
+import { getFriends } from '../reducers/selectors/friendship_selectors';
+import { getCommentIdsByPost } from '../reducers/selectors/comment_selectors';
+import { getCurrentUser } from './user_actions';
 
 export const RECEIVE_ALL_POSTS = "RECEIVE_ALL_POSTS";
 export const RECEIVE_POST = "RECEIVE_POST";
-export const REMOVE_POST = "REMOVE_POST";
+export const DELETE_POST = "DELETE_POST";
 export const CLEAR_POSTS = "CLEAR_POSTS";
 
-export const receiveAllPosts = data => {
+export const receivePost = (post) => {
+  return {
+    type: RECEIVE_POST,
+    post
+  };
+};
+
+
+export const receiveAllPosts = (data) => {
     return {
         type: RECEIVE_ALL_POSTS,
         data 
     }
 };
 
-export const receivePost = post => {
-    return {
-        type: RECEIVE_POST,
-        post 
-    }
-};
 
-export const removePost = (post, comments) => {
+export const deletePostObj = (post, comments) => {
     return {
-        type: REMOVE_POST,
+        type: DELETE_POST,
         post,
         comments
     }
@@ -37,9 +39,9 @@ export const clearPosts = () => {
     }
 }
 
-export const createPost = (post) => dispatch => {
+export const publishPost = (post) => (dispatch) => {
     return (
-        PostAPIUtil.createPost(post)
+        PostAPIUtil.publishPost(post)
             .then(
                 post => dispatch(receivePost(post)),
                 err => dispatch(receiveErrors(err))
@@ -47,8 +49,8 @@ export const createPost = (post) => dispatch => {
     )
 }
 
-export const fetchPosts = (filter) => dispatch => {
-    return (PostAPIUtil.requestAllPosts(filter)
+export const getPosts = (filter) => (dispatch) => {
+    return (PostAPIUtil.getPosts(filter)
         .then(
             posts => dispatch(receiveAllPosts(posts)),
             err => dispatch(receiveErrors(err))
@@ -56,14 +58,14 @@ export const fetchPosts = (filter) => dispatch => {
     )
 };
 
-export const fetchPost = (postId) => dispatch => {
-    return (PostAPIUtil.requestPost(postId)
-        .then(post => dispatch(receivePost(post)))
-    )
-};
+// export const fetchPost = (postId) => dispatch => {
+//     return (PostAPIUtil.requestPost(postId)
+//         .then(post => dispatch(receivePost(post)))
+//     )
+// };
 
-export const updatePost = (post) => dispatch => {
-    return (PostAPIUtil.updatePost(post)
+export const editPost = (post) => dispatch => {
+    return (PostAPIUtil.editPost(post)
         .then(
             post => dispatch(receivePost(post)),
             err => dispatch(receiveErrors(err))
@@ -74,13 +76,13 @@ export const updatePost = (post) => dispatch => {
 export const deletePost = (postId) => (dispatch, getState) => {
     return (PostAPIUtil.deletePost(postId)
         .then(
-            post => dispatch(removePost(post, getCommentIdsByPost(getState().entities.comments, post.id))),
+            post => dispatch(deletePostObj(post, getCommentIdsByPost(getState().entities.comments, post.id))),
             err => dispatch(receiveErrors(err))
         )
     )
 }
 
-export const fetchCurrentUserFeed = () => (dispatch, getState) => {
-    dispatch(fetchCurrentUser())
-    return fetchPosts({userId: getState().session.currentUser})(dispatch);
+export const getCurrentUserFeed = () => (dispatch, getState) => {
+    dispatch(getCurrentUser())
+    return getPosts({userId: getState().session.currentUser})(dispatch);
 }

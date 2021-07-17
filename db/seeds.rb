@@ -19,15 +19,17 @@ demo = User.create!(
     last_name: "Tran",
     email: "max@max.com",
     password: "123456",
-    birthdate: "2020/01/01",
+    birthday: "2020/01/01",
     gender: "Male",
+    profile_pic: "https://faybuk-seeds.s3-us-west-1.amazonaws.com/max_profile.jpeg",
+    cover_photo: "https://faybuk-seeds.s3.us-west-1.amazonaws.com/catcoverphoto.jpeg"
 )
 
-democover = open("https://faybuk-seeds.s3.us-west-1.amazonaws.com/catcoverphoto.jpeg")
-demo.cover_photo.attach(io: democover, filename: 'demo_cover_photo.jpg')
+# democover = open("https://faybuk-seeds.s3.us-west-1.amazonaws.com/catcoverphoto.jpeg")
+# demo.cover_photo.attach(io: democover, filename: 'demo_cover_photo.jpg')
 
-demoprofile = open("https://faybuk-seeds.s3-us-west-1.amazonaws.com/max_profile.jpeg")
-demo.profile_pic.attach(io: demoprofile, filename: 'demo_profile_pic.jpg')
+# demoprofile = open("https://faybuk-seeds.s3-us-west-1.amazonaws.com/max_profile.jpeg")
+# demo.profile_pic.attach(io: demoprofile, filename: 'demo_profile_pic.jpg')
 
 
 user1 = User.create!(
@@ -35,18 +37,20 @@ user1 = User.create!(
     last_name: "Phan",
     email: "penelope@penelope.com",
     password: "123456",
-    birthdate: "2020/02/02",
+    birthday: "2020/02/02",
     gender: "Female",
+    profile_pic: "https://faybuk-seeds.s3.us-west-1.amazonaws.com/pen_cover.JPEG",
+    cover_photo: "https://faybuk-seeds.s3-us-west-1.amazonaws.com/pen_profile.JPG"
 )
 
-user1cover = open("https://faybuk-seeds.s3.us-west-1.amazonaws.com/pen_cover.JPEG")
-user1.cover_photo.attach(io: user1cover, filename: 'user1_cover_photo.jpg')
+# user1cover = open("https://faybuk-seeds.s3.us-west-1.amazonaws.com/pen_cover.JPEG")
+# user1.cover_photo.attach(io: user1cover, filename: 'user1_cover_photo.jpg')
 
-user1profile = open("https://faybuk-seeds.s3-us-west-1.amazonaws.com/pen_profile.JPG")
-user1.profile_pic.attach(io: user1profile, filename: 'user1_profile_pic.jpg')
+# user1profile = open("https://faybuk-seeds.s3-us-west-1.amazonaws.com/pen_profile.JPG")
+# user1.profile_pic.attach(io: user1profile, filename: 'user1_profile_pic.jpg')
 
-user2 = User.create!(first_name: "Chopper", last_name: "Tran", email: "chopper@chopper.com", password: "123456", birthdate: "2020/03/03", gender: "Male")
-user3 = User.create!(first_name: "Yoyo", last_name: "Chu", email: "chu@chu.com", password: "123456", birthdate: "2020/04/04", gender: "Female")
+user2 = User.create!(first_name: "Chopper", last_name: "Tran", email: "chopper@chopper.com", password: "123456", birthday: "2020/03/03", gender: "Male")
+user3 = User.create!(first_name: "Yoyo", last_name: "Chu", email: "chu@chu.com", password: "123456", birthday: "2020/04/04", gender: "Female")
 
 
 friendship1 = Friendship.create!(
@@ -89,9 +93,9 @@ reverse_friendship4 = Friendship.create!(
     friend_id: user1.id 
 )
 
-request1 = Request.create!(
-    sender_id: user1.id,
-    receiver_id: demo.id 
+request1 = FriendRequest.create!(
+    requester_id: user1.id,
+    requested_id: demo.id 
 )
 
 post1 = Post.create!(

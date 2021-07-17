@@ -1,13 +1,13 @@
 @users.each do |user|
     json.set! user.id do
         json.parital! "api/users/user", user: user
-        if user.profile_pic.attached?
-            json.profile_pic url_for(user.profile_pic)
+        if user.profile_pic
+            json.profile_pic url_for(@user.profile_pic)
         else
             json.profile_pic image_url("default_profile.png")
         end
-        if user.cover_photo.attached?
-            json.cover_photo url_for(user.cover_photo)
+        if user.cover_photo
+            json.cover_photo url_for(@user.cover_photo)
         else
             json.cover_photo nil 
         end

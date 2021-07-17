@@ -1,4 +1,4 @@
-import { fetchPosts } from './post_actions';
+import { getPosts } from './post_actions'
 
 
 export const UPDATE_FILTER = "UPDATE_FILTER";
@@ -11,5 +11,5 @@ export const changeFilter = (filter, value) => ({
 
 export const updateFilter = (filter, value) => (dispatch, getState) => {
     dispatch(changeFilter(filter, value));
-    return fetchPosts(getState().ui.filters)(dispatch)
+    return getPosts(getState().ui.filters)(dispatch)
 }
