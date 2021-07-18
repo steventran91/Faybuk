@@ -70,7 +70,7 @@ class Navbar extends React.Component {
                 className="profile-link"
               >
                 <Avatar
-                  src={this.props.currentUser?.profilePic}
+                  src={this.props.currentUser.profile_pic}
                   className="avatar-profile"
                   fontSize="small"
                 />

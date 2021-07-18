@@ -24,10 +24,11 @@ class ProfilePage extends React.Component {
         {/* {NavbarContainer} */}
         <div className="profile-header-container">
           <div className="cover-photo-container">
-            <img src={this.props.user?.coverPhoto} className="cover-photo" />
+            <img src={this.props.user.cover_photo} className="cover-photo" />
           </div>
           <div className="profile-pic-container">
-            <img src={this.props.user?.profilePic} className="profile-pic" />
+      
+            <img src={this.props.user?.profile_pic} className="profile-pic" />
           </div>
           <div
             className="profile-name-container"

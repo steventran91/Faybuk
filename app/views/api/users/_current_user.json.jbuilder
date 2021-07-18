@@ -13,24 +13,24 @@ json.user do
 end
 
 
-json.friend_requests do
-    user.outgoing_friend_requests.each do |friend_request|
-        json.set! friend_request.id do
-            json.extract! friend_request, :requester_id, :requested_id, :id, :created_at
-        end
-    end
+# json.friend_requests do
+#     user.outgoing_friend_requests.each do |friend_request|
+#         json.set! friend_request.id do
+#             json.extract! friend_request, :requester_id, :requested_id, :id, :created_at
+#         end
+#     end
 
-    user.received_friend_requests.each do |friend_request|
-        json.set! friend_request.id do 
-            json.extract! friend_request, :requester_id, :requested_id, :id, :created_at
-        end
-    end
-end
+#     user.received_friend_requests.each do |friend_request|
+#         json.set! friend_request.id do 
+#             json.extract! friend_request, :requester_id, :requested_id, :id, :created_at
+#         end
+#     end
+# end
 
-json.friendships do 
-    user.friendships.each do |friendship|
-        json.set! friendship.id do 
-            json.extract! friendship, :user_id, :friend_id, :id, :created_at 
-        end
-    end
-end
+# json.friendships do 
+#     user.friendships.each do |friendship|
+#         json.set! friendship.id do 
+#             json.extract! friendship, :user_id, :friend_id, :id, :created_at 
+#         end
+#     end
+# end
