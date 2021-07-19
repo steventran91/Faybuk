@@ -1,9 +1,9 @@
 json.user do 
     json.extract! user, :first_name, :last_name, :email, :id, :birthday, :gender
-    if user.profile_photo
-        json.profile_photo url_for(user.profile_photo)
+    if user.profile_pic
+        json.profile_pic url_for(user.profile_pic)
     else 
-        json.profile_photo image_url('default_prof_male.jpg')
+        json.profile_pic image_url('default_prof_male.jpg')
     end
     if user.cover_photo
         json.cover_photo url_for(user.cover_photo)

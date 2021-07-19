@@ -1,0 +1,161 @@
+events-icon{
+    background-image: image-url('events.png');
+    height: 28px;
+    width: 28px;
+    background-size: 28px 28px;
+    margin-right: 5px;
+}
+
+.bday-icon{
+    background-image: image-url('bday.png');
+    height: 28px;
+    width: 28px;
+    background-size: 28px 28px;
+    margin-right: 5px;
+}
+
+// .fa-github{
+//     height: 40px;
+//     width: 40px;
+// }
+
+
+//PROFILE ICONS
+.edit-icon{
+    background-image: image-url('edit.png');
+    height: 16px;
+    width: 16px;
+    margin-right: 8px;
+    margin-left: 5px;
+}
+
+.arrow-right-icon{
+    background-image: image-url('arrow_right.png');
+    height: 16px;
+    width: 16px;
+    // margin-right: 5px;
+    // margin-left: 5px;
+    background-size: 16px 16px;
+}
+
+.school-icon{
+    background-image: image-url('grad.png');
+    // background-position: center;
+    background-size: 20px 20px;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+.location-icon{
+    background-image: image-url('location.png');
+    background-size: 20px 20px;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+.birthday-icon{
+    background-image: image-url('birthday.png');
+    background-size: 20px 20px;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+.work-icon{
+    background-image: image-url('work.png');
+    background-size: 20px 20px;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+.male-icon{
+    background-image: image-url('male.png');
+    background-size: 20px 20px;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+.female-icon{
+    background-image: image-url('female.png');
+    background-size: 20px 20px;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+.prof-pic-btn .fas{
+    font-size: 1.3rem;
+}
+
+.add-friend-icon{
+    background-image: image-url('add_friend.png');
+    height: 16px;
+    width: 16px;
+    margin-right: 8px;
+    margin-left: 5px;
+}
+
+.cancel-request-icon{
+    background-image: image-url('cancel_request.png');
+    height: 16px;
+    width: 16px;
+    margin-right: 8px;
+    margin-left: 5px;
+}
+
+.friend-icon{
+    background-image: image-url('friended.png');
+    height: 16px;
+    width: 16px;
+    margin-right: 8px;
+    margin-left: 5px;
+}
+
+.friended-fill-icon{
+    background-image: image-url('friended.png');
+    height: 16px;
+    width: 16px;
+    margin-right: 8px;
+    margin-left: 5px;
+    // fill: #1877f2;
+}
+
+.like-icon{
+    background-image: image-url('like_icon.png');
+    height: 16px;
+    width: 16px;
+    background-size: 16px 16px;
+    margin-right: 5px;
+}
+
+.like-icon-small{
+    
+}
+
+//POST ICONS
+
+.more-container{
+    height: 36px;
+    width: 36px;
+    border-radius: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    border: none;
+    background-color: #fff;
+}
+
+.more-container:hover{
+    background-color: #f3f3ed;
+}
+
+.more-container .fas{
+    font-size: 1rem;
+    color: #8b8d90;
+}

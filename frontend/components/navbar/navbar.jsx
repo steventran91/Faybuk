@@ -15,6 +15,7 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 
+
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
@@ -41,6 +42,7 @@ class Navbar extends React.Component {
               />
             </Link>
             <div className="nav-input">
+              {/* <SearchContainer /> */}
               <SearchIcon />
               <input type="text" placeholder="Search..." />
             </div>

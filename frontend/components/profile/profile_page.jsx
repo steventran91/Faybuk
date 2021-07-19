@@ -3,9 +3,6 @@ import CameraAltIcon from "@material-ui/icons/CameraAlt";
 import CreateIcon from "@material-ui/icons/Create";
 import NavBarContainer from "../../components/navbar/navbar_container";
 import MenuBar from "./menu_bar";
-//IntroContainer
-//PostContainer
-//FriendsContainer
 
 class ProfilePage extends React.Component {
   constructor(props) {
@@ -19,9 +16,7 @@ class ProfilePage extends React.Component {
 
   render() {
     return (
-
       <div>
-        {/* {NavbarContainer} */}
         <div className="profile-header-container">
           <div className="cover-photo-container">
             <img src={this.props.user.cover_photo} className="cover-photo" />
