@@ -56,7 +56,7 @@ class PostModal extends React.Component {
     const formData = new FormData();
     if (this.props.modal === "post") {
       formData.append("post[body]", this.state.body);
-      formData.append("post[author_id", this.props.currentUser.id);
+      formData.append("post[author_id]", this.props.currentUser.id);
       formData.append("post[wall_id]", this.props.wallUser.id);
       if (this.state.imageFile) {
         formData.append("post[photo]", this.state.imageFile);

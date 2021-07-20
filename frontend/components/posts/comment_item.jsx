@@ -11,8 +11,8 @@ import CommentLikes from "./comment_likes";
 const mSTP = (state, ownProps) => {
   let wallId = ownProps.match.params.userId;
   return {
-    author: state.entities.users[ownProps.comment.author_id],
-    currentUser: state.entities.users[state.session.currentUser],
+    author: state.entities.users[ownProps.comment.commenter_id], //changed from author_id
+    currentUser: state.entities.users[state.session.currentUser], 
     likes: getLikesOfLike(
       state.entities.likes,
       ownProps.comment.id,
@@ -25,7 +25,7 @@ const mDTP = (dispatch, ownProps) => {
   return {
     editComment: (comment) => dispatch(editComment(comment)),
     deleteComment: () => dispatch(deleteComment(ownProps.comment.id)),
-    getAuthor: () => dispatch(getUser(ownProps.comment.author_id)),
+    getAuthor: () => dispatch(getUser(ownProps.comment.commenter_id)), //changed from author_id
   };
 };
 
@@ -66,7 +66,7 @@ class CommentItem extends React.Component {
         .editComment({
           id: this.props.comment.id,
           body: this.state.body,
-          author_id: this.props.currentUser.id,
+          commenter_id: this.props.currentUser.id,
           post_id: this.props.comment.post_id,
         })
         .then(this.setState({ edit: false, more: false }));
@@ -121,8 +121,8 @@ class CommentItem extends React.Component {
             </div>
             <div className="comment-options">
               <LikeButton
-                likeable_id={this.props.comment.id}
-                likeable_type={"Comment"}
+                like_id={this.props.comment.id}
+                like_type={"Comment"}
                 user_id={this.props.currentUser.id}
               />
               {/* COME BACK TO THIS FOR COMMENT REPLIES */}
@@ -134,7 +134,7 @@ class CommentItem extends React.Component {
             </div>
           </div>
         )}
-        {this.props.currentUser.id === this.props.comment.author_id ||
+        {this.props.currentUser.id === this.props.comment.commenter_id ||
         this.props.currentUser.id === this.props.wallUser.id ? (
           <button
             id="more-small"

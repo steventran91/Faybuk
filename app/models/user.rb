@@ -1,6 +1,5 @@
 class User < ApplicationRecord
     validates :first_name, :last_name, :password_digest, presence: true
-    # validates :profile_pic, :cover_photo
     validates :email, :session_token, presence: true, uniqueness: true 
     validates :password, length: { minimum: 6, allow_nil: true}
 

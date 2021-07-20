@@ -10,7 +10,6 @@ class LoginForm extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-
             email: "",
             password: "",
         };
@@ -97,7 +96,7 @@ class LoginForm extends React.Component {
                   )}
                   <button
                     className="btn accent"
-                    onClick={this.props.handleSubmit}
+                    onClick={this.handleSubmit}
                     type="submit"
                   >
                     Log In

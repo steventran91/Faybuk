@@ -3,6 +3,9 @@ import {connect} from 'react-redux';
 import {closeModal} from '../../actions/modal_actions';
 import { signup, clearErrors } from '../../actions/session/session_actions';
 import SignupFormContainer from './signup_form_container';
+import ErrorTip from "./error_tip";
+
+
 
 
 // function Modal({ modal, closeModal}) {

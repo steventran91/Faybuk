@@ -3,7 +3,7 @@ import NavbarContainer from "./navbar/navbar_container";
 import LoginFormContainer from './session/login_form_container';
 import {Route, Link, Switch, Redirect} from 'react-router-dom'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-//feed
+import Feed from './feed';
 import Modal from './session/modal';
 import Profile from './profile/profile';
 import PostModal from './posts/post_modal';
@@ -26,6 +26,7 @@ const App = () => {
           {/* <Route exact path="/users/:userId" component={ProfilePageContainer} /> */}
           <AuthRoute exact path="/login" component={LoginFormContainer} />
           <ProtectedRoute path="/users/:userId" component={Profile} />
+          <ProtectedRoute exact path="/" component={Feed} />
           <Redirect to="/" />
         </Switch>
       </div>

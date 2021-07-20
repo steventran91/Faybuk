@@ -78,7 +78,7 @@ class PostItem extends React.Component {
       this.props
         .publishComment({
           body: this.state.body,
-          author_id: this.props.currentUser.id,
+          commenter_id: this.props.currentUser.id,
           post_id: this.props.post.id,
         })
         .then(
@@ -153,7 +153,7 @@ class PostItem extends React.Component {
                   </>
                 )}
               </div>
-              <div>{timestamp}</div>
+              <div className="timestamp">{timestamp}</div>
             </div>
           </div>
           {this.props.currentUser.id === this.props.author.id ||
@@ -207,8 +207,8 @@ class PostItem extends React.Component {
         </div>
         <div className="option-bar">
           <LikeButton
-            likeable_id={this.props.post.id}
-            likeable_type={"Post"}
+            like_id={this.props.post.id}
+            like_type={"Post"}
             user_id={this.props.currentUser.id}
           />
           <button className="option-btn" onClick={this.focusComment}>

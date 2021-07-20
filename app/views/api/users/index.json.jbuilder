@@ -1,18 +1,25 @@
 @users.each do |user|
     json.set! user.id do
-        json.parital! "api/users/user", user: user
-        if user.profile_pic
-            json.profile_pic url_for(@user.profile_pic)
-        else
-            json.profile_pic image_url("default_profile.png")
-        end
-        if user.cover_photo
-            json.cover_photo url_for(@user.cover_photo)
-        else
-            json.cover_photo nil 
-        end
+        json.partial! "api/users/user", user: user
     end
 end
+
+
+# @users.each do |user|
+#     json.set! user.id do
+#         json.parital! "api/users/user", user: user
+#         if user.profile_pic
+#             json.profile_pic url_for(@user.profile_pic)
+#         else
+#             json.profile_pic image_url("default_profile.png")
+#         end
+#         if user.cover_photo
+#             json.cover_photo url_for(@user.cover_photo)
+#         else
+#             json.cover_photo nil 
+#         end
+#     end
+# end
 
 # json.requests do 
 #     @users.each do |user|

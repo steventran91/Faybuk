@@ -12,7 +12,6 @@ export default class Timeline extends React.Component {
   render() {
     return (
       <>
-        {/* for left side sticky elements */}
         <div className="profile-sticky">
           <div className="profile-intro">
             <div>Intro</div>

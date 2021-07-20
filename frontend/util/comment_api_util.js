@@ -1,9 +1,11 @@
 export const publishComment = (comment) => {
-  return $.ajax({
-    url: "/api/comments",
-    method: "POST",
-    data: { comment },
-  });
+  return (
+    $.ajax({
+      url: `/api/comments`,
+      method: "POST",
+      data: { comment }
+    })
+  )
 };
 
 export const deleteComment = (commentId) => {

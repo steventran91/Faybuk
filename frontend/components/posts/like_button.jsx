@@ -5,7 +5,7 @@ import { findLike } from '../../reducers/selectors/like_selectors';
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        like: findLike(state,entities.likes, ownProps.like_id, ownProps.like_type, ownProps.user_id)
+        like: findLike(state.entities.likes, ownProps.like_id, ownProps.like_type, ownProps.user_id)
     }
 }
 
@@ -35,7 +35,7 @@ class LikeButton extends React.Component {
   }
 
   render() {
-    if (this.props.likeable_type === "Comment") {
+    if (this.props.like_type === "Comment") {
       return (
         <div
           id={this.props.like ? "does-like" : ""}
