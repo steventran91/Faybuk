@@ -4,8 +4,8 @@ import { getFriends } from '../reducers/selectors/friendship_selectors';
 import { getCommentIdsByPost } from '../reducers/selectors/comment_selectors';
 import { getCurrentUser } from './user_actions';
 
-export const RECEIVE_ALL_POSTS = "RECEIVE_ALL_POSTS";
 export const RECEIVE_POST = "RECEIVE_POST";
+export const RECEIVE_ALL_POSTS = "RECEIVE_ALL_POSTS";
 export const DELETE_POST = "DELETE_POST";
 export const CLEAR_POSTS = "CLEAR_POSTS";
 

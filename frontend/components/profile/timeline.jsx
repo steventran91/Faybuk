@@ -37,7 +37,6 @@ export default class Timeline extends React.Component {
             <Friends user={this.props.user} full={false} />
           </div>
         </div>
-        {/* for right side scroll elements */}
         <div className="profile-scroll">
           {this.props.notFriends ? (
             <></>

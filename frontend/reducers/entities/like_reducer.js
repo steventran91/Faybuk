@@ -1,7 +1,7 @@
 import { RECEIVE_LIKE, DELETE_LIKE } from "../../actions/like_actions";
 import { RECEIVE_ALL_POSTS, CLEAR_POSTS, DELETE_POST} from "../../actions/post_actions";
 import { DELETE_COMMENT } from "../../actions/comment_actions";
-import { getLikesOfLike, getLikesFromComments } from "../selectors/like_selectors";
+import { getLikesOfLikeable, getLikesFromComments } from "../selectors/like_selectors";
 
 const likeReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -24,7 +24,7 @@ const likeReducer = (state = {}, action) => {
     case CLEAR_POSTS:
       return {};
     case DELETE_POST:
-      let postLikes = getLikesOfLike(newState, action.post.id, "Post");
+      let postLikes = getLikesOfLikeable(newState, action.post.id, "Post");
       let commentLikes = getLikesFromComments(newState, action.comments);
       likes = postLikes.concat(commentLikes);
       likes.forEach((like) => {
@@ -32,7 +32,7 @@ const likeReducer = (state = {}, action) => {
       });
       return newState;
     case DELETE_COMMENT:
-      likes = getLikesOfLike(newState, action.comment.id, "Comment");
+      likes = getLikesOfLikeable(newState, action.comment.id, "Comment");
       likes.forEach((like) => {
         delete newState[like.id];
       });

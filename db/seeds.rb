@@ -12,6 +12,7 @@ Comment.destroy_all
 Friendship.destroy_all
 Like.destroy_all
 Post.destroy_all
+FriendRequest.destroy_all
 
 
 demo = User.create!(
@@ -21,6 +22,10 @@ demo = User.create!(
     password: "123456",
     birthday: "2020/01/01",
     gender: "Male",
+    bio: "hello",
+    location: "bay area",
+    work: "sleep specialist",
+    school: "kitten academy",
     profile_pic: "https://faybuk-seeds.s3-us-west-1.amazonaws.com/max_profile.jpeg",
     cover_photo: "https://faybuk-seeds.s3.us-west-1.amazonaws.com/catcoverphoto.jpeg"
 )
@@ -39,6 +44,10 @@ user1 = User.create!(
     password: "123456",
     birthday: "2020/02/02",
     gender: "Female",
+    bio: "i hate everyone",
+    location: "los angelas",
+    work: "bully",
+    school: "kitten academy",
     profile_pic: "https://faybuk-seeds.s3.us-west-1.amazonaws.com/pen_cover.JPEG",
     cover_photo: "https://faybuk-seeds.s3-us-west-1.amazonaws.com/pen_profile.JPG"
 )
@@ -135,26 +144,26 @@ comment2 = Comment.create!(
 )
 
 like1 = Like.create!(
-    like_id: post4.id,
-    like_type: "Post",
+    likeable_id: post4.id,
+    likeable_type: "Post",
     user_id: user3.id 
 )
 
 like2 = Like.create!(
-    like_id: post3.id,
-    like_type: "Post",
+    likeable_id: post3.id,
+    likeable_type: "Post",
     user_id: demo.id 
 )
 
 like3 = Like.create!(
-    like_id: comment1.id,
-    like_type: "Comment",
+    likeable_id: comment1.id,
+    likeable_type: "Comment",
     user_id: demo.id 
 )
 
 like4 = Like.create!(
-    like_id: comment2.id,
-    like_type: "Comment",
+    likeable_id: comment2.id,
+    likeable_type: "Comment",
     user_id: user3.id 
 )
 

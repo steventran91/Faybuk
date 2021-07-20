@@ -5,7 +5,7 @@ import { editComment, deleteComment } from "../../actions/comment_actions";
 import { withRouter } from "react-router-dom";
 import { getUser } from "../../actions/user_actions";
 import LikeButton from "./like_button";
-import { getLikesOfLike } from "../../reducers/selectors/like_selectors";
+import { getLikesOfLikeable } from "../../reducers/selectors/like_selectors";
 import CommentLikes from "./comment_likes";
 
 const mSTP = (state, ownProps) => {
@@ -13,7 +13,7 @@ const mSTP = (state, ownProps) => {
   return {
     author: state.entities.users[ownProps.comment.commenter_id], //changed from author_id
     currentUser: state.entities.users[state.session.currentUser], 
-    likes: getLikesOfLike(
+    likes: getLikesOfLikeable(
       state.entities.likes,
       ownProps.comment.id,
       "Comment"
@@ -121,15 +121,10 @@ class CommentItem extends React.Component {
             </div>
             <div className="comment-options">
               <LikeButton
-                like_id={this.props.comment.id}
-                like_type={"Comment"}
+                likeable_id={this.props.comment.id}
+                likeable_type={"Comment"}
                 user_id={this.props.currentUser.id}
               />
-              {/* COME BACK TO THIS FOR COMMENT REPLIES */}
-              {/* <button className='option-btn' onClick={this.focusComment}>
-                        <i className="far fa-comment-alt"></i>
-                        <div>Comment</div>
-                    </button> */}
               <div className="comment-time">{timestamp}</div>
             </div>
           </div>

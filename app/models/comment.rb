@@ -9,7 +9,9 @@ class Comment < ApplicationRecord
     foreign_key: :commenter_id,
     class_name: :User 
 
-    has_many :likes, dependent: :destroy
+    has_many :likes,
+    as: :likeable,
+    dependent: :destroy
 
     
 end

@@ -142,7 +142,7 @@ export default class AboutRow extends React.Component {
       const yearArr = Array.from(new Array(116), (x, i) => i + 1905).reverse();
       const yearOptions = yearArr.map((year) => {
         return (
-          <option value={year} kedivy={year}>
+          <option value={year} key={year}>
             {year}
           </option>
         );

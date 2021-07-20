@@ -1,9 +1,9 @@
-export const getLikesOfLike = (likes, like_id, like_type) => {
+export const getLikesOfLikeable = (likes, likeable_id, likeable_type) => {
   let result = [];
   for (let id in likes) {
     if (
-      likes[id].like_id === parseInt(like_id) &&
-      likes[id].like_type === like_type
+      likes[id].likeable_id === parseInt(likeable_id) &&
+      likes[id].likeable_type === likeable_type
     ) {
       result.push(likes[id]);
     }
@@ -15,8 +15,8 @@ export const getLikesFromComments = (likes, commentArray) => {
   let result = [];
   for (let id in likes) {
     if (
-      commentArray.includes(likes[id].like_id) &&
-      likes[id].like_type === "Comment"
+      commentArray.includes(likes[id].likeable_id) &&
+      likes[id].likeable_type === "Comment"
     ) {
       result.push(likes[id]);
     }
@@ -24,12 +24,12 @@ export const getLikesFromComments = (likes, commentArray) => {
   return result;
 };
 
-export const findLike = (likes, like_id, like_type, user_id) => {
+export const findLike = (likes, likeable_id, likeable_type, user_id) => {
   for (let id in likes) {
     let like = likes[id];
     if (
-      like.like_id === like_id &&
-      like.like_type === like_type &&
+      like.likeable_id === likeable_id &&
+      like.likeable_type === likeable_type &&
       like.user_id === user_id
     ) {
       return like;

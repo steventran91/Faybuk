@@ -9,7 +9,7 @@ import { deletePost } from "../../actions/post_actions";
 import { openModal } from "../../actions/modal_actions";
 import { getUser } from "../../actions/user_actions";
 import LikeButton from "./like_button";
-import { getLikesOfLike } from "../../reducers/selectors/like_selectors";
+import { getLikesOfLikeable } from "../../reducers/selectors/like_selectors";
 import Reactions from "./reactions";
 
 const mSTP = (state, ownProps) => {
@@ -19,7 +19,7 @@ const mSTP = (state, ownProps) => {
     wallUser: state.entities.users[wallId],
     comments: getCommentsByPost(state.entities.comments, ownProps.post.id),
     author: state.entities.users[ownProps.post.author_id],
-    likes: getLikesOfLike(state.entities.likes, ownProps.post.id, "Post"),
+    likes: getLikesOfLikeable(state.entities.likes, ownProps.post.id, "Post"),
   };
 };
 
@@ -180,7 +180,10 @@ class PostItem extends React.Component {
               ) : (
                 <></>
               )}
-              <button className="more-btn" onMouseDown={this.handleDelete}>
+              <button
+                className="more-btn"
+                onMouseDown={this.handleDelete}
+              >
                 <div className="icon-container">
                   <i className="far fa-trash-alt"></i>
                 </div>
@@ -207,8 +210,8 @@ class PostItem extends React.Component {
         </div>
         <div className="option-bar">
           <LikeButton
-            like_id={this.props.post.id}
-            like_type={"Post"}
+            likeable_id={this.props.post.id}
+            likeable_type={"Post"}
             user_id={this.props.currentUser.id}
           />
           <button className="option-btn" onClick={this.focusComment}>
