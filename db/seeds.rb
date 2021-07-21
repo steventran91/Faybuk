@@ -102,10 +102,10 @@ reverse_friendship4 = Friendship.create!(
     friend_id: user1.id 
 )
 
-request1 = FriendRequest.create!(
-    requester_id: user1.id,
-    requested_id: demo.id 
-)
+# request1 = FriendRequest.create!(
+#     requester_id: user1.id,
+#     requested_id: demo.id 
+# )
 
 post1 = Post.create!(
     body: "my owner will not give me attention",
