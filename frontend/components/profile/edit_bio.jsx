@@ -11,7 +11,7 @@ class EditBio extends React.Component {
     super(props);
     this.state = {
       editing: false,
-      body: this.props.user.bio
+      body: "",
     };
     this.handleOpenEdit = this.handleOpenEdit.bind(this);
     this.handleInput = this.handleInput.bind(this);
