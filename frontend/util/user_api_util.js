@@ -40,9 +40,12 @@ export const updateUserPhoto = (formData) => (
     })
 )
 
-export const updateUser = (user) =>
-  $.ajax({
-    url: `/api/users/${user.id}`,
-    method: "PATCH",
-    data: { user },
-  });
+export const updateUser = (user) => {
+    console.log("api util");
+    return $.ajax({
+      url: `/api/users/${user.id}`,
+      method: "PATCH",
+      data: { user },
+    });
+}
+    

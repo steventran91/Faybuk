@@ -11,7 +11,7 @@ class EditBio extends React.Component {
     super(props);
     this.state = {
       editing: false,
-      body: "", // changed from this.props.user.bio, will change back after seeding
+      body: this.props.user.bio
     };
     this.handleOpenEdit = this.handleOpenEdit.bind(this);
     this.handleInput = this.handleInput.bind(this);
@@ -28,6 +28,7 @@ class EditBio extends React.Component {
   }
 
   handleSubmit() {
+    console.log("handlesubmit")
     this.props
       .updateUser({ id: this.props.user.id, bio: this.state.body })
       .then(this.setState({ editing: false }));

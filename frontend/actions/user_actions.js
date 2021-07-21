@@ -63,6 +63,8 @@ export const getUsers = (idArr) => (dispatch) => {
 
 
 export const updateUser = (user) => (dispatch) => {
+    console.log("update user")
+    // console.log(user)
     return(
         UserAPIUtil.updateUser(user)
             .then(
