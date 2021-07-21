@@ -28,7 +28,6 @@ class EditBio extends React.Component {
   }
 
   handleSubmit() {
-    console.log("handlesubmit")
     this.props
       .updateUser({ id: this.props.user.id, bio: this.state.body })
       .then(this.setState({ editing: false }));

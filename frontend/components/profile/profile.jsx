@@ -41,7 +41,6 @@ const mSTP = (state, ownProps) => {
       state.entities.friendships
     ),
     isFetching: state.ui.isFetching,
-    // friendships: getFriendships(ownProps.match.params.userId, state.entities.friendships)
   };
 };
 
@@ -66,8 +65,6 @@ class Profile extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    // console.log('component updated')
-    // console.log(this.props)
     if (this.props.match.params.userId !== prevProps.match.params.userId) {
       this.props
         .getUser(this.props.match.params.userId)

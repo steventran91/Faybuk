@@ -41,30 +41,10 @@ export const getUsers = (idArr) => (dispatch) => {
     )
 }
 
-// export const fetchUser = (id) => dispatch => {
-//     return (
-//         UserAPIUtil.requestUser(id)
-//             .then(
-//                 user => dispatch(receiveUser(user)),
-//                 err => dispatch(receiveErrors(err))
-//             )
-//     )
-// }
 
-// export const fetchUsers = (idArr) => dispatch => {
-//     return (
-//         UserAPIUtil.requestAllUsers({idArr: idArr})
-//             .then(
-//                 users => dispatch(receiveUsers(users)),
-//                 err => dispatch(receiveErrors(err))
-//             )
-//     )
-// }
 
 
 export const updateUser = (user) => (dispatch) => {
-    console.log("update user")
-    // console.log(user)
     return(
         UserAPIUtil.updateUser(user)
             .then(
