@@ -44,7 +44,7 @@ class Navbar extends React.Component {
             <div className="nav-input">
               {/* <SearchContainer /> */}
               <SearchIcon />
-              <input type="text" placeholder="Search..." />
+              <input type="text" placeholder="Under Construction..." />
             </div>
           </div>
           <div className="center-navbar">
