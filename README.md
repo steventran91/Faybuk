@@ -31,41 +31,55 @@ Faybuk is a clone of social media app, Facebook. It is a single page application
 
 * Users can sign up, login, and logout.
 * Users can also use Demo Login.
-![Screen Shot 2021-06-11 at 9 30 17 AM](https://user-images.githubusercontent.com/78631034/121719177-b033f680-ca97-11eb-8b79-ee5f8d1ae916.png)
+![Screen Shot 2021-07-26 at 9 51 52 PM](https://user-images.githubusercontent.com/78631034/127097361-cdaee83a-bb21-4b62-ae26-17634fbec705.png)
+
 
 ### Profile Page
-* User's profile page has an intro section that let others know more about them. The intro section is customizable, allowing users to update their info.
-![Screen Shot 2021-06-11 at 9 45 29 AM](https://user-images.githubusercontent.com/78631034/121722116-e2deee80-ca99-11eb-8cc0-43e802b0b16b.png)
-![Screen Shot 2021-06-11 at 9 46 10 AM](https://user-images.githubusercontent.com/78631034/121722129-e5414880-ca99-11eb-95ce-156e3795bebb.png)
+* User's profile page contains an Intro section that is editable as well as a bio section. 
+* Users have the ability to upload cover photo or profile picture. 
+![Screen Shot 2021-07-26 at 9 54 18 PM](https://user-images.githubusercontent.com/78631034/127097566-d40d6ee0-cca8-4414-801d-a060084fb029.png)
+![Screen Shot 2021-07-26 at 9 56 04 PM](https://user-images.githubusercontent.com/78631034/127097715-82c88843-9497-46df-ae75-8adf64ea48fa.png)
 
-* Used hooks for creating the user's edit from. This allowed for two different creations of states. A state for the intro container and the edit form. 
+* Utilized formData to allow users to upload photos for posts and comments. 
 ```Javascript
-function IntroBox() {
-  const [details, setDetails] = useState({
-    work: "whats work?",
-    study: "huh?",
-    home: "home"
-  });
-  const [formVals, setFormVals] = useState({
-    work: "",
-    study: "",
-    home: "",
-  });
-  const [visible, setVisible] = useState(false);
-  const { work, study, home } = details;
+handleSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData();
+    if (this.props.modal === "post") {
+      formData.append("post[body]", this.state.body);
+      formData.append("post[author_id]", this.props.currentUser.id);
+      formData.append("post[wall_id]", this.props.wallUser.id);
+      if (this.state.imageFile) {
+        formData.append("post[photo]", this.state.imageFile);
+      }
+      this.props.publishPost(formData).then(this.handlePostSubmit);
+    } else if (Array.isArray(this.props.modal)) {
+      formData.append("post[id]", this.props.modal[1]);
+      formData.append("post[body]", this.state.body);
+      formData.append("post[author_id]", this.props.currentUser.id);
+      formData.append("post[wall_id]", this.props.wallUser.id);
+      if (this.state.imageFile) {
+        formData.append("post[photo]", this.state.imageFile);
+      }
+      this.props.editPost(formData).then(this.handlePostSubmit);
+    }
+  }
 ```
 
-## Future Direction
-* Users are able to upload cover and profile photo.
-* Comments/Postings
-    * Users can post on each others wall if they are friends.
-    * Users can comment on each others post. 
-    * Users can create/edit/delete comments and posts. 
-* Friending
-    * Users can send and receive friend requests.
-    * Users can accept or decline friend requests. 
-* News Feed
-    * Displays all comments and posts for current user.
-    * Displays contacts/friends list.
+
+### Friend Requests
+* Users have the ability to send and decline friend requests.
+![Screen Shot 2021-07-26 at 9 57 28 PM](https://user-images.githubusercontent.com/78631034/127097843-568cd0af-5dcd-4160-82f7-5e8d58bb1760.png)
+
+### Posts/Comments 
+* Users can post on their profile page wall or their feed wall. 
+* Users can also comment on posts and like posts and comments as well. 
+![Screen Shot 2021-07-26 at 10 06 00 PM](https://user-images.githubusercontent.com/78631034/127098745-e06be77a-2f22-4ff6-aeab-be6311fe9d6a.png)
+![Screen Shot 2021-07-26 at 10 07 51 PM](https://user-images.githubusercontent.com/78631034/127098752-f1d9efcc-9876-48a2-8d92-4f53cc05d38b.png)
+
+
+
+
+
 
 
